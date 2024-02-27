@@ -1,5 +1,6 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
-import Home from './views/Home';
+import {Home} from './views/Home.js';
+import {About} from './views/About.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
@@ -14,14 +15,9 @@ setRoutes(routes);
 
 // Set the root element where views will be rendered
 window.addEventListener("DOMContentLoaded", () => {
-  setRootEl(/* root element */);
+  setRootEl(document.getElementById("root"));
 });
 
-// Handle initial URL load
-window.addEventListener("DOMContentLoaded", () => {
-  // set root element
-  // invoke onURLChange 
-});
 // Handle URL changes
 window.addEventListener('popstate', ({objetivo}) => {
   onURLChange(location);
