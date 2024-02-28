@@ -4,28 +4,26 @@ import {About} from './views/About.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
-// Define your routes and their associated views
-const routes = {
-  '/': Home,
-  '/about':About
-};
-
-// Assign the routes
-setRoutes(routes);
-
-// Set the root element where views will be rendered
-window.addEventListener("DOMContentLoaded", () => {
-  setRootEl(document.getElementById("root"));
-});
-
-// Handle URL changes
-window.addEventListener('popstate', ({objetivo}) => {
-  onURLChange(location);
-});
-
 /*
 TODO:
 1.- Definir rutas en router.
 2.- Pasar "root element" a router.
 3.- Invocar el router para renderizar la vista correcta.
 */
+// Define your routes and their associated views
+const routes = {
+  '/': Home,
+  '/about': About
+};
+
+// Assign the routes
+const viewPage = document.getElementById("root");
+setRoutes(routes);
+setRootEl(viewPage);
+
+// Set the root element where views will be rendered
+// Handle initial URL load
+window.addEventListener("DOMContentLoaded", (event) => {
+ 
+  onURLChange(event.target.location);
+});
