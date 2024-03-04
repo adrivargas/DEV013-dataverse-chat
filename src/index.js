@@ -2,6 +2,7 @@
 import {About} from './views/About.js';
 import {Error} from './views/Error.js';
 import {Home} from './views/Home.js';
+import {Bienvenida} from './views/Bienvenida.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
@@ -15,6 +16,7 @@ TODO:
 const routes = {
   '/': Home,
   '/about': About,
+  '/bienvenida': Bienvenida,
   '/error': Error
 };
 
