@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+header{
+    background-image: url("header.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 500px;
+    margin-bottom: 100px;
+    margin-left: 200px;
+}
+p{
+    font-size: 100px;
+    color: white;
+    margin: 0 0 0 400px;
+}
+body{
+    background-color: black;
+}
+.about{
+    font-size: 100px;
+    color: white;
+    margin: 0 0 0 400px;
+}
+
+button{
+  width: 0;
+  height: 0;
+  margin-left: 880px;
+  margin-top: 50px;
+  cursor:pointer;
+  border-left: 100px solid #f0a636;;
+  border-top: 50px solid black;
+  border-bottom: 50px solid black; 
+  transition:all 0.3s ease-in;
+  box-shadow: 10px 10px 10px rgba(251, 155, 0, 0.1),
+   -10px -10px 10px rgba(237, 155, 32, 0.6);
+  
+}
