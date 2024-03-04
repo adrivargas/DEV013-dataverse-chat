@@ -4,28 +4,40 @@
     box-sizing:border-box;
 }
 
-header{
+/* header{
     background-image: url("header.png");
     background-size: contain;
     background-repeat: no-repeat;
     height: 500px;
-    margin-bottom: 100px;
-    margin-left: 200px;
-}
+    margin-top: -600px;
+    margin-right: -150px;
+   
+} */
 p{
     font-size: 100px;
     color: white;
     margin: 0 0 0 400px;
 }
+
 body{
     background-color: black;
 }
+
 .about{
     font-size: 100px;
     color: white;
     margin: 0 0 0 400px;
 }
-
+.error{
+    font-size: 100px;
+    color: white;
+    margin: 200 0 0 400px;
+}
+.imgEr{
+    background-image: url(error.png);
+    background-repeat: no-repeat;
+    margin-top: -500px;
+}
 button{
   width: 0;
   height: 0;
