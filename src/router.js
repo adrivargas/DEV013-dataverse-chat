@@ -8,14 +8,20 @@ export const setRootEl = (el) => {
 }
 
 export const setRoutes = (routes) => {
-  // optional Throw errors if routes isn't an object
-  // optional Throw errors if routes doesn't define an /error route
-  // assign ROUTES
-  if (typeof routes != "object") {
-     throw new Error("Error");
+  // Throw errors if routes isn't an object
+  if (typeof routes !== 'object') {
+    throw new Error('Routes must be an object');
   }
+  
+  // Throw errors if routes doesn't define an /error route
+  if (!routes.hasOwnProperty('/error')) {
+    throw new Error('Routes must define an /error route');
+  }
+  
+  // assign ROUTES
   return ROUTES = routes;
-}
+};
+
 
 const queryStringToObject = (queryString) => {
   // convert query string to URLSearchParams

@@ -9,17 +9,20 @@ header{
     background-size: contain;
     background-repeat: no-repeat;
     height: 500px;
-    margin-bottom: 100px;
-    margin-left: 200px;
+    margin-top: -600px;
+    margin-right: -150px;
+   
 }
 p{
     font-size: 100px;
     color: white;
     margin: 0 0 0 400px;
 }
+
 body{
     background-color: black;
 }
+
 .about{
     font-size: 100px;
     color: white;
