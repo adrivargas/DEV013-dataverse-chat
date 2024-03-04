@@ -2,6 +2,7 @@
 import {About} from './views/About.js';
 import {Error} from './views/Error.js';
 import {Home} from './views/Home.js';
+
 import {Bienvenida} from './views/Bienvenida.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
@@ -21,13 +22,21 @@ const routes = {
 };
 
 // Assign the routes
-const viewPage = document.getElementById("root");
 setRoutes(routes);
-setRootEl(viewPage);
+const root = document.getElementById("root");
+document.addEventListener("DOMContentLoaded", (e) => {
+  setRootEl(root);
+  return root;
+});
+
+
 
 // Set the root element where views will be rendered
 // Handle initial URL load
-window.addEventListener("DOMContentLoaded", (event) => {
- 
-  onURLChange(event.target.location);
+window.addEventListener("DOMContentLoaded", () => {
+  setRootEl(root);
+  onURLChange(e.currentTarget.location);
 });
+
+
+
