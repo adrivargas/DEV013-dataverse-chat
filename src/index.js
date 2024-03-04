@@ -21,13 +21,21 @@ const routes = {
 };
 
 // Assign the routes
-const viewPage = document.getElementById("root");
 setRoutes(routes);
-setRootEl(viewPage);
+const root = document.getElementById("root");
+document.addEventListener("DOMContentLoaded", (e) => {
+  setRootEl(root);
+  return root;
+});
+
+
 
 // Set the root element where views will be rendered
 // Handle initial URL load
-window.addEventListener("DOMContentLoaded", (event) => {
- 
-  onURLChange(event.target.location);
+window.addEventListener("DOMContentLoaded", () => {
+  setRootEl(root);
+  onURLChange(e.currentTarget.location);
 });
+
+
+
