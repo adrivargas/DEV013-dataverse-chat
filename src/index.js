@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 // Set the root element where views will be rendered
 // Handle initial URL load
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", (e) => {
   setRootEl(root);
   onURLChange(e.currentTarget.location);
 });
