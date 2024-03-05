@@ -1,45 +1,60 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header{
-    background-image: url("header.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 500px;
-    margin-top: -600px;
-    margin-right: -150px;
-   
-}
-p{
-    font-size: 100px;
-    color: white;
-    margin: 0 0 0 400px;
-}
-
-body{
+body {
     background-color: black;
 }
 
-.about{
-    font-size: 100px;
-    color: white;
-    margin: 0 0 0 400px;
+header {
+    background-image: url("./images/header.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-button{
-  width: 0;
-  height: 0;
-  margin-left: 880px;
-  margin-top: 50px;
-  cursor:pointer;
-  border-left: 100px solid #f0a636;;
-  border-top: 50px solid black;
-  border-bottom: 50px solid black; 
-  transition:all 0.3s ease-in;
-  box-shadow: 10px 10px 10px rgba(251, 155, 0, 0.1),
-   -10px -10px 10px rgba(237, 155, 32, 0.6);
-  
+p,
+.about {
+    font-size: 5vw; /* Adjust the font size responsively */
+    color: white;
+    text-align: center; /* Center the text */
+    margin: 100px 0; /* Add some margin for better spacing */
+}
+
+button {
+    width: 250px; /* Adjust the width as needed */
+    height: 250px; /* Adjust the height as needed */
+    margin-top: 40px; /* Adjust the top margin as needed */
+    cursor: pointer;
+    background: url("./images/play.png") center center/cover; /* Replace "your-image-path.jpg" with the path to your image */
+     /* Set the text color to be visible against the background image */
+    border: none;
+    outline: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    header{
+        min-width:320px;
+        height: 481px;
+    }
+    p,
+    .about {
+        font-size: 4vw; /* Adjust the font size for smaller screens */
+    }
+
+    button {
+        width: 150px; /* Adjust the width for smaller screens */
+        height: 150px; /* Adjust the height for smaller screens */
+    }
 }
