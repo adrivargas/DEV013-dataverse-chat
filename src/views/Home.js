@@ -15,6 +15,7 @@ export function Home(props) {
     const headerEl = document.createElement('header');
     const pTitele = document.createElement('p');
     const btnStart = document.createElement('button');
+    const imagePopcorn = document.createElement ('img');
     pTitele.textContent = 'Bienvenida!';
     viewBtn.appendChild(btnStart);
 
@@ -24,6 +25,7 @@ export function Home(props) {
     // Agregar el encabezado al div
     viewEl.appendChild(headerEl);
     viewEl.appendChild(pTitele);
+    viewEl.appendChild(imagePopcorn);
     viewEl.appendChild(viewBtn);
     
 

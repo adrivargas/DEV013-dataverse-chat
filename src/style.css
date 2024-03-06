@@ -22,19 +22,21 @@ header {
 
 p,
 .about {
-    font-size: 5vw; /* Adjust the font size responsively */
+    font-size: 5vw; 
     color: white;
-    text-align: center; /* Center the text */
-    margin: 100px 0; /* Add some margin for better spacing */
+    text-align: center; 
+    margin: 100px 0; 
+}
+img {
+    background-image: url("./images/404-error.png");
 }
 
 button {
-    width: 250px; /* Adjust the width as needed */
-    height: 250px; /* Adjust the height as needed */
-    margin-top: 40px; /* Adjust the top margin as needed */
+    width: 250px; 
+    height: 250px; 
+    margin-top: 40px; 
     cursor: pointer;
-    background: url("./images/play.png") center center/cover; /* Replace "your-image-path.jpg" with the path to your image */
-     /* Set the text color to be visible against the background image */
+    background: url("./images/play.png") center center/cover;
     border: none;
     outline: none;
     display: block;
@@ -43,18 +45,65 @@ button {
 }
 
 /* Media query for smaller screens */
-@media screen and (max-width: 768px) {
-    header{
-        min-width:320px;
-        height: 481px;
+@media screen and (max-width: 1280px) {
+        header{
+        
+        height: 300px;
     }
+    
     p,
     .about {
-        font-size: 4vw; /* Adjust the font size for smaller screens */
+        font-size: 6vw; 
     }
 
     button {
-        width: 150px; /* Adjust the width for smaller screens */
-        height: 150px; /* Adjust the height for smaller screens */
+        width: 50px; 
+        height: 50px; 
+    }
+}
+@media screen and (max-width: 768px) {
+    header{
+        
+        height: 250px;
+    }
+    p,
+    .about {
+        font-size: 8vw; 
+    }
+
+    button {
+        width: 50px; 
+        height: 50px; 
+    }
+}
+@media screen and (max-width: 481px) {
+    header{
+        
+        height: 200px;
+    }
+    p,
+    .about {
+        font-size: 6vw; 
+    }
+
+    button {
+        width: 50px; 
+        height: 50px; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header{
+        
+        height: 200px;
+    }
+    p,
+    .about {
+        font-size: 6vw; 
+    }
+
+    button {
+        width: 20px; 
+        height: 20px; 
     }
 }
