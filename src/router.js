@@ -41,7 +41,7 @@ const renderView = (pathname, props={}) => {
   // add the view element to the DOM root element
   const root = rootEl;
   root.innerHTML = "";
-  const viewPath = ROUTES[pathname];//Nos falta  comprobar view error
+  const viewPath = ROUTES[pathname] || ROUTES['error'];//Nos falta  comprobar view error
   const viewRender = viewPath(props);//Asignamos valor a props
   root.appendChild(viewRender);
 } 

@@ -9,32 +9,80 @@ body {
 }
 
 header {
-    background-image: url("./images/header.png");
+    background-image: linear-gradient(to bottom, transparent, black), url("./images/header.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 1000px;
+    height: 1200px;
+    margin-top: 100px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+
+footer {
+    background-image: linear-gradient(to top, transparent, black), url("./images/footer.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 700px;
+    margin-top: 100px;
+    display: flex;
 }
 
 p,
 .about {
-    font-size: 5vw; 
+    font-size: 5vw;
+    font-family: monospace;
     color: white;
-    text-align: center; 
-    margin: 100px 0; 
-}
-img {
-    background-image: url("./images/404-error.png");
+    text-align: center;
+    margin: 100px 0;
 }
 
+.cartasContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.img_movies {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* li {
+    display: flex;
+    font-size: 50px;
+    color: white;
+    width: 30%;
+    margin-bottom: 40px;
+    background-color: rgb(41, 40, 40);
+} */
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: white;
+    width: 30%;
+    margin-bottom: 40px;
+    background-color: rgb(41, 40, 40);
+}
+
+.img_movies {
+    width: 500px;
+}
+
+
+
 button {
-    width: 250px; 
-    height: 250px; 
-    margin-top: 40px; 
+    width: 250px;
+    height: 250px;
+    margin-top: 100px;
     cursor: pointer;
     background: url("./images/play.png") center center/cover;
     border: none;
@@ -46,64 +94,85 @@ button {
 
 /* Media query for smaller screens */
 @media screen and (max-width: 1280px) {
-        header{
-        
-        height: 300px;
-    }
+    header{
     
-    p,
-    .about {
-        font-size: 6vw; 
-    }
+    height: 300px;
+}
 
-    button {
-        width: 50px; 
-        height: 50px; 
-    }
+p,
+.about {
+    font-size: 6vw; 
+}
+
+button {
+    width: 50px; 
+    height: 50px; 
+}
+
+footer{
+    height: 300px;
+}
 }
 @media screen and (max-width: 768px) {
-    header{
-        
-        height: 250px;
-    }
-    p,
-    .about {
-        font-size: 8vw; 
-    }
+header{
+    
+    height: 250px;
+}
+p,
+.about {
+    font-size: 8vw; 
+}
 
-    button {
-        width: 50px; 
-        height: 50px; 
-    }
+button {
+    width: 50px; 
+    height: 50px; 
+}
+
+    
+footer{
+    height: 300px;
+}
+    
 }
 @media screen and (max-width: 481px) {
-    header{
-        
-        height: 200px;
-    }
-    p,
-    .about {
-        font-size: 6vw; 
-    }
+header{
+    
+    height: 200px;
+}
+p,
+.about {
+    font-size: 6vw; 
+}
 
-    button {
-        width: 50px; 
-        height: 50px; 
-    }
+button {
+    width: 50px; 
+    height: 50px; 
+}
+
+
+footer{
+    height: 300px;
+}
+    
 }
 
 @media screen and (max-width: 480px) {
-    header{
-        
-        height: 200px;
-    }
-    p,
-    .about {
-        font-size: 6vw; 
-    }
+header{
+    
+    height: 200px;
+}
+p,
+.about {
+    font-size: 6vw; 
+}
 
-    button {
-        width: 20px; 
-        height: 20px; 
-    }
+button {
+    width: 20px; 
+    height: 20px; 
+}
+
+
+footer{
+    height: 300px;
+}
 }

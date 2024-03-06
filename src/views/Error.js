@@ -1,4 +1,4 @@
-
+import { header } from '../components/header.js';
 export const Error = (props) => {
     const viewError = document.createElement("section");
     const contentError = document.createElement("section");
@@ -12,7 +12,7 @@ export const Error = (props) => {
 
 </div>
 `;
-
+viewError.appendChild(header());
 viewError.append(contentError);
 return viewError;
 
@@ -38,5 +38,3 @@ return viewError;
 
 //     return viewEr;
 // };
-
-

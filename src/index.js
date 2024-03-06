@@ -14,9 +14,9 @@ TODO:
 */
 // Define your routes and their associated views
 const routes = {
-  '/': Home,
+  '/': Bienvenida,
   '/about': About,
-  '/bienvenida': Bienvenida,
+  '/home': Home,
   '/error': Error
 };
 
@@ -36,6 +36,8 @@ window.addEventListener("DOMContentLoaded", (e) => {
   setRootEl(root);
   onURLChange(e.currentTarget.location);
 });
+
+
 
 
 
