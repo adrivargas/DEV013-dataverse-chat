@@ -1,21 +1,3 @@
-export const renderData = (data) => {
-  let movieCards = "";
-  data.forEach((movies) => {
-    root +=  `
-  <dl itemscope itemtype="MOVIES">
-    <img src=${movies.imageUrl}>
-    <dt>Nombre:</dt><dd itemprop="name">${movies.name}</dd>
-    <dt>Short descripción:</dt><dd itemprop="shortdescription">${movies.shortDescription}</dd>
-    <dt>Premios Ganados:</dt><dd itemprop="datos_importantes">${movies.facts.premioGanado}</dd>
-  </dl>`
-  
-  });
- 
-  // Retornar el contenedor actualizado
-  return root;
-  
-};
-
 export const ordenarNombresAZ = (data) => {
     const dataOrdenada = data.slice().sort((a,b)=>{
       const nombreA = a.name.toUpperCase();

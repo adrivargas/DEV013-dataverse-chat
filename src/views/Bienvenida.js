@@ -1,8 +1,28 @@
+import { header } from '../components/header.js';
+export function Bienvenida() {
 
-export function Bienvenida () {
-    const bienvenidaView = document.createElement('h1');
-    viewEl.textContent = "Bienvenida";
-    return bienvenidaView; 
-    
+    // Crear el elemento del div
+    const viewEl = document.createElement('div');
+
+    const viewBtn = document.createElement('div');
+    viewEl.classList.add('home-container');
+
+    // Crear el elemento del encabezado (header)
+    const pTitele = document.createElement('p');
+    const btnStart = document.createElement('button');
+    pTitele.textContent = 'Bienvenida!';
+    viewBtn.appendChild(btnStart);
+
+    //const customHeader= header();
+    //headerEl.appendChild(customHeader);
+
+    // Agregar el encabezado al div
+    viewEl.appendChild(header());
+    viewEl.appendChild(pTitele);
+    viewEl.appendChild(viewBtn);
+
+
+    return viewEl;
+
 }
 
