@@ -77,7 +77,7 @@ export default [
     "ingresos": 678226566,
     "shortDescription": "Drama que sigue la vida extraordinaria de Forrest Gump.",
     "description": "Drama que sigue la vida extraordinaria de Forrest Gump. Estrenada el 6 de julio de 1994, dirigida por Robert Zemeckis, la película recaudó $678,226,566. Aunque no taquillera, ganó 6 premios y se convirtió en un clásico atemporal, gracias a la memorable actuación de Tom Hanks.Al tener el coeficiente intelectual de un niño, Forrest Gump siempre ha sido considerado el “tonto” de clase. Su madre se siente protegido y junto a su amiga Jenny es feliz, aunque en su propio mundo. Un problema en su columna vertebral no le impide convertirse en un ágil corredor.",
-    "imageUrl": "https://raw.githubusercontent.com/gabyrramos/DEV013-dataverse/main/Imagenes/forret-gump.jpeg",
+    "imageUrl": "https://raw.githubusercontent.com/gabyrramos/DEV013-dataverse/main/Imagenes/forrestgump.webp",
     "facts": {
     "taquillera": "si",
     "fechaPublicacion": "6 de julio de 1994",
@@ -161,7 +161,7 @@ export default [
     "ingresos": 792910554,
     "shortDescription": "Amistad entre un niño y un extraterrestre.",
     "description": "La pelicula gira alrededor de la amistad entre un niño y un extraterrestre. Estrenada el 11 de junio de 1982 y dirigida por Steven Spielberg, la película se convirtió en un fenómeno cultural. Con ingresos de $792,910,554, ganó 4 premios, Un alienígena queda abandonado en la Tierra y es encontrado por Elliot, un niño que lo esconde en su casa, ayudado por su hermana pequeña, y lo bautiza con el nombre de E.T. Mientras Elliot empieza a establecer una fuerte amistad con el extraterrestre, los científicos del gobierno lo buscan por toda la zona.",
-    "imageUrl": "https://raw.githubusercontent.com/gabyrramos/DEV013-dataverse/main/Imagenes/et-el-extraterrestre.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/gabyrramos/DEV013-dataverse/main/Imagenes/et.jpeg",
     "facts": {
     "taquillera": "si",
     "fechaPublicacion": "11 de junio de 1982",
@@ -217,7 +217,7 @@ export default [
     "ingresos": 940335536,
     "shortDescription": "Aventura animada en el océano en busca de un pez desaparecido.",
     "description": "Aventura animada en el océano en busca de un pez desaparecido y cuyo padre sale en busca y rescate, con la ayuda de su amiga Doris. Estrenada el 30 de mayo de 2003 y dirigida por Andrew Stanton, la película recaudó $940,335,536. Ganó 1 premio y se convirtió en un clásico de animación. La película narra las aventuras de este pez, que es capturado y llevado fuera del arrecife australiano para ser parte de la pecera de un dentista de Sidney. ",
-    "imageUrl": "https://raw.githubusercontent.com/gabyrramos/DEV013-dataverse/main/Imagenes/buscando-a-nemo.jpeg",
+    "imageUrl": "https://raw.githubusercontent.com/gabyrramos/DEV013-dataverse/main/Imagenes/buscando%20a%20nemo.jpeg",
     "facts": {
     "taquillera": "si",
     "fechaPublicacion": "30 de mayo de 2003",
@@ -329,7 +329,7 @@ export default [
     "ingresos": 623722818,
     "shortDescription": "Comedia animada sobre un ratón que sueña con ser chef.",
     "description": "Esta pelicula es una comedia animada sobre un ratón que sueña con ser chef y hace lo posible por conseguirlo. Esta pelicula nos enseña a soñar con lo que queremos ser y no rendirnos. Dirigida por Brad Bird y estrenada el 22 de junio de 2007, Ratatouille recaudó $623,722,818. Aunque no fue una película taquillera, ganó 1 premio y se destacó por su encanto y originalidad. La historia de Remy, el ratón amante de la cocina, sigue siendo querida por el público.",
-    "imageUrl": "https://raw.githubusercontent.com/gabyrramos/DEV013-dataverse/main/Imagenes/ratatouille.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/gabyrramos/DEV013-dataverse/main/Imagenes/ratatouille.webp",
     "facts": {
     "taquillera": "si",
     "fechaPublicacion": "22 de junio de 2007",

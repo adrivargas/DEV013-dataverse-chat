@@ -1,9 +1,11 @@
+
 import { header } from '../components/header.js';
+import { footer } from '../components/footer.js';
 export function Bienvenida() {
 
+    
     // Crear el elemento del div
     const viewEl = document.createElement('div');
-
     const viewBtn = document.createElement('div');
     viewEl.classList.add('home-container');
 
@@ -17,12 +19,9 @@ export function Bienvenida() {
     //headerEl.appendChild(customHeader);
 
     // Agregar el encabezado al div
-    viewEl.appendChild(header());
-    viewEl.appendChild(pTitele);
-    viewEl.appendChild(viewBtn);
-
+ 
+   viewEl.append(header(), pTitele, viewBtn, footer());
 
     return viewEl;
 
 }
-
