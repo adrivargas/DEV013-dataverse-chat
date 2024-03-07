@@ -26,6 +26,8 @@ footer {
     height: 700px;
     margin-top: 100px;
     display: flex;
+
+    
 }
 
 p,
@@ -86,6 +88,53 @@ ul {
     background-color: rgb(41, 40, 40);
 }
 
+
+    /* Adjust the font size responsively */
+    font-family: monospace;
+    color: white;
+    text-align: center;
+    /* Center the text */
+    margin: 100px 0;
+    /* Add some margin for better spacing */
+}
+
+.cartasContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.img_movies {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* li {
+    display: flex;
+    font-size: 50px;
+    color: white;
+    width: 30%;
+    margin-bottom: 40px;
+    background-color: rgb(41, 40, 40);
+} */
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: white;
+    width: 30%;
+    margin-bottom: 40px;
+    background-color: rgb(41, 40, 40);
+}
+
+
 .img_movies {
     width: 500px;
 }
@@ -94,10 +143,22 @@ ul {
 
 button {
     width: 250px;
+
     height: 250px;
     margin-top: 100px;
     cursor: pointer;
     background: url("./images/play.png") center center/cover;
+
+    /* Adjust the width as needed */
+    height: 250px;
+    /* Adjust the height as needed */
+    margin-top: 100px;
+    /* Adjust the top margin as needed */
+    cursor: pointer;
+    background: url("./images/play.png") center center/cover;
+    /* Replace "your-image-path.jpg" with the path to your image */
+    /* Set the text color to be visible against the background image */
+
     border: none;
     outline: none;
     display: block;
@@ -106,6 +167,7 @@ button {
 }
 
 /* Media query for smaller screens */
+
 @media screen and (max-width: 1280px) {
     header{
     
@@ -190,4 +252,24 @@ button {
 footer{
     height: 100px;
 }
+
+@media screen and (max-width: 768px) {
+    header {
+        min-width: 320px;
+        height: 481px;
+    }
+
+    p,
+    .about {
+        font-size: 4vw;
+        /* Adjust the font size for smaller screens */
+    }
+
+    button {
+        width: 150px;
+        /* Adjust the width for smaller screens */
+        height: 150px;
+        /* Adjust the height for smaller screens */
+    }
+
 }
