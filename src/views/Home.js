@@ -9,8 +9,9 @@ export function Home(props) {
     const movieData = document.createElement("div");   // contenedor de cartas (o elementos HTML) que se generarán dinámicamente.
     movieData.className = "cartasContainer";
     movieData.innerHTML = renderData(data) 
+ 
     viewEl.appendChild(header());
-    viewEl.appendChild(footer());
     viewEl.appendChild(movieData);
+    viewEl.appendChild(footer());
     return viewEl;
 }

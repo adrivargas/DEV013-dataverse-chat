@@ -40,16 +40,29 @@ p,
 .cartasContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
+    grid-gap: 5px; /* Adjust the gap as needed for spacing */
+    background-color: black;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.card-movie {
+    list-style: none;
+}
+
+.movie-info {
+    background-color: #e10a0a;
+    color: white;
+    padding: 0px;
+    margin:0px;
+    text-align: center;
 }
 
 .img_movies {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 
 /* li {
@@ -110,9 +123,10 @@ button {
 }
 
 footer{
-    height: 300px;
+    height: 200px;
 }
 }
+
 @media screen and (max-width: 768px) {
 header{
     
@@ -130,7 +144,7 @@ button {
 
     
 footer{
-    height: 300px;
+    height: 150px;
 }
     
 }
@@ -151,7 +165,8 @@ button {
 
 
 footer{
-    height: 300px;
+    height: 250px;
+    
 }
     
 }
@@ -173,6 +188,6 @@ button {
 
 
 footer{
-    height: 300px;
+    height: 100px;
 }
 }
