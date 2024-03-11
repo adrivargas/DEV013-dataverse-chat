@@ -27,7 +27,7 @@ footer {
     margin-top: 100px;
     display: flex;
 
-    
+
 }
 
 p,
@@ -39,31 +39,26 @@ p,
     margin: 100px 0;
 }
 
-.cartasContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px; /* Adjust the gap as needed for spacing */
-    background-color: black;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px;
-}
-
 .card-movie {
     list-style: none;
 }
 
 .movie-info {
-    background-color: #e10a0a;
     color: white;
-    padding: 0px;
-    margin:0px;
+    padding: 15px;
+}
+
+dt {
+    text-align: justify;
+    color: rgb(243, 213, 93);
+}
+
+dd {
     text-align: center;
 }
 
 .img_movies {
-    width: 100%;
-    height: auto;
+    width: 60%;
     max-width: 100%;
 }
 
@@ -84,54 +79,24 @@ p,
     transition: .3s ease;
 }
 
-.hiddenMenu.active{
+.hiddenMenu.active {
     right: 0;
 }
 
-.nav{ 
- padding: 1rem;
- display: flex;
- background-color: rgb(31, 31, 31);
+.nav {
+    padding: 1rem;
+    display: flex;
+    background-color: rgb(31, 31, 31);
 }
 
-.hamMenu{
+.hamMenu {
     background-image: url("./images/menu.png");
     height: 50%;
     width: 50%;
     margin-left: auto;
     position: relative;
 }
-/* li {
-    display: flex;
-    font-size: 50px;
-    color: white;
-    width: 30%;
-    margin-bottom: 40px;
-    background-color: rgb(41, 40, 40);
-} */
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    color: white;
-    width: 30%;
-    margin-bottom: 40px;
-    background-color: rgb(41, 40, 40);
-}
 
-
-    /* Adjust the font size responsively */
-   
-    /* Adjust the font size responsively
-    font-family: monospace;
-    color: white;
-    text-alignm: center;
-    /* Center the text */
-    
-    /* Add some margin for better spacing */
 
 .cartasContainer {
     display: grid;
@@ -139,46 +104,29 @@ ul {
     grid-gap: 1.25rem;
     font-weight: bold;
     margin-bottom: 2rem;
+    border-radius: 10px;
 }
 
-.img_movies {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-/* li {
-    display: flex;
-    font-size: 50px;
-    color: white;
-    width: 30%;
-    margin-bottom: 40px;
-    background-color: rgb(41, 40, 40);
-} */
 ul {
-    display: flex;
     flex-wrap: wrap;
     list-style: none;
     justify-content: center;
     align-items: center;
     font-size: 50px;
     color: white;
-    width: 30%;
-    margin-bottom: 40px;
+    width: 80%;
     background-color: rgb(41, 40, 40);
+    border-radius: 15px 15px 15px 15px;
+    margin: 50px;
+    margin-left: 80px;
+    -webkit-box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+    -moz-box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+    box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+
 }
-
-
-.img_movies {
-    width: 500px;
-}
-
-
 
 button {
     width: 250px;
-
     height: 250px;
     margin-top: 100px;
     cursor: pointer;
@@ -204,108 +152,112 @@ button {
 /* Media query for smaller screens */
 
 @media screen and (max-width: 1280px) {
-    header{
-    
-    height: 300px;
-}
-
-p,
-.about {
-    font-size: 6vw; 
-}
-
-button {
-    width: 50px; 
-    height: 50px; 
-}
-
-footer{
-    height: 200px;
-}
-}
-
-@media screen and (max-width: 768px) {
-header{
-    
-    height: 250px;
-}
-p,
-.about {
-    font-size: 8vw; 
-}
-
-button {
-    width: 50px; 
-    height: 50px; 
-}
-
-    
-footer{
-    height: 150px;
-}
-    
-}
-@media screen and (max-width: 481px) {
-header{
-    
-    height: 200px;
-}
-p,
-.about {
-    font-size: 6vw; 
-}
-
-button {
-    width: 50px; 
-    height: 50px; 
-}
-
-
-footer{
-    height: 250px;
-    
-}
-    
-}
-
-@media screen and (max-width: 480px) {
-header{
-    
-    height: 200px;
-}
-p,
-.about {
-    font-size: 6vw; 
-}
-
-button {
-    width: 20px; 
-    height: 20px; 
-}
-
-
-footer{
-    height: 100px;
-}
-
-@media screen and (max-width: 768px) {
     header {
-        min-width: 320px;
-        height: 481px;
+
+        height: 300px;
     }
 
     p,
     .about {
-        font-size: 4vw;
-        /* Adjust the font size for smaller screens */
+        font-size: 6vw;
     }
 
     button {
-        width: 150px;
-        /* Adjust the width for smaller screens */
+        width: 50px;
+        height: 50px;
+    }
+
+    footer {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+
+        height: 250px;
+    }
+
+    p,
+    .about {
+        font-size: 8vw;
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    footer {
         height: 150px;
-        /* Adjust the height for smaller screens */
     }
 
 }
-} 
+
+@media screen and (max-width: 481px) {
+    header {
+
+        height: 200px;
+    }
+
+    p,
+    .about {
+        font-size: 6vw;
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    footer {
+        height: 250px;
+
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    header {
+
+        height: 200px;
+    }
+
+    p,
+    .about {
+        font-size: 6vw;
+    }
+
+    button {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    footer {
+        height: 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+        header {
+            min-width: 320px;
+            height: 481px;
+        }
+
+        p,
+        .about {
+            font-size: 4vw;
+            /* Adjust the font size for smaller screens */
+        }
+
+        button {
+            width: 150px;
+            /* Adjust the width for smaller screens */
+            height: 150px;
+            /* Adjust the height for smaller screens */
+        }
+
+    }
+}
