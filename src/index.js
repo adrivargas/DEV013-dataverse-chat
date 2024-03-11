@@ -1,6 +1,6 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 import {Home} from './views/Home.js';
-import {About} from './views/About.js';
+import {Chat} from './views/Chat.js';
 import {Error} from './views/Error.js';
 import {Bienvenida} from './views/Bienvenida.js';
 // ... import other views
@@ -15,7 +15,7 @@ TODO:
 // Define your routes and their associated views
 const routes = {
   '/': Bienvenida,
-  '/about': About,
+  '/chat': Chat,
   '/home': Home,
   '/error': Error
 };

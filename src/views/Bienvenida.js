@@ -1,6 +1,8 @@
 
 import { header } from '../components/header.js';
 import { footer } from '../components/footer.js';
+
+
 export function Bienvenida() {
 
     
@@ -12,6 +14,7 @@ export function Bienvenida() {
     // Crear el elemento del encabezado (header)
     const pTitele = document.createElement('p');
     const btnStart = document.createElement('button');
+     
     pTitele.textContent = 'Bienvenida!';
     viewBtn.appendChild(btnStart);
 
@@ -25,3 +28,5 @@ export function Bienvenida() {
     return viewEl;
 
 }
+
+
