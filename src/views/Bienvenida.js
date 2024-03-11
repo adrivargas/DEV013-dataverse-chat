@@ -28,5 +28,3 @@ export function Bienvenida() {
     return viewEl;
 
 }
-
-

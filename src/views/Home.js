@@ -10,7 +10,7 @@ export function Home(props) {
     movieData.className = "cartasContainer";
     movieData.innerHTML = renderData(data) 
 
-    //Menu con todas los filtros y estadisticas
+    //Menu con todos los filtros y estadisticas
     const hiddenMenu = document.createElement('div');
     hiddenMenu.setAttribute("class" , "hiddenMenu");
 
@@ -27,7 +27,7 @@ export function Home(props) {
     const statistics = document.createElement('li');
     statistics.setAttribute("class" , "statistics");
 
-    //for the icon
+    //Para el icono
 
     const nav = document.createElement('nav');
     nav.setAttribute("class" , "nav"); 
@@ -43,8 +43,8 @@ export function Home(props) {
     //Uniendo todo 
  
     viewEl.appendChild(header());
-    viewEl.appendChild(hamMenu); // Append the hamburger menu
-        viewEl.appendChild(hiddenMenu); // Append the hidden menu
+    viewEl.appendChild(hamMenu); 
+        viewEl.appendChild(hiddenMenu); 
         viewEl.appendChild(ul);
         viewEl.appendChild(sortAZ);
         viewEl.appendChild(filter);
