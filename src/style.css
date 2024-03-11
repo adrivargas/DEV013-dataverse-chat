@@ -89,14 +89,13 @@ ul {
 }
 
 
-    /* Adjust the font size responsively */
+    /* Adjust the font size responsively
     font-family: monospace;
     color: white;
     text-align: center;
     /* Center the text */
-    margin: 100px 0;
+    /* margin: 100px 0; */
     /* Add some margin for better spacing */
-}
 
 .cartasContainer {
     display: grid;
@@ -273,3 +272,4 @@ footer{
     }
 
 }
+} 
