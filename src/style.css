@@ -124,13 +124,13 @@ ul {
 
 
     /* Adjust the font size responsively */
-    font-familym: monospace;
+  /*  font-familym: monospace;
     color: white;
     text-alignm: center;
     /* Center the text */
-    margin: 100px 0;
+    /*margin: 100px 0;
     /* Add some margin for better spacing */
-}
+
 
 .cartasContainer {
     display: grid;
@@ -286,7 +286,7 @@ button {
 footer{
     height: 100px;
 }
-
+}
 @media screen and (max-width: 768px) {
     header {
         min-width: 320px;
@@ -305,5 +305,4 @@ footer{
         height: 150px;
         /* Adjust the height for smaller screens */
     }
-
-}
+} 

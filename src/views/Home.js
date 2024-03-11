@@ -19,14 +19,15 @@ export function Home(props) {
 
     const sortAZ = document.createElement('li');
     sortAZ.setAttribute("class" , "sortAZ");
-    sortAZ.textContent = "Sort by A-Z"
+    sortAZ.textContent = `Sort by A-Z`;
 
     const filter = document.createElement('li');
     filter.setAttribute("class" , "filter");
+    filter.textContent = `Filtra por Genero`;
 
     const statistics = document.createElement('li');
     statistics.setAttribute("class" , "statistics");
-
+    statistics.textContent = `Estadisticas`;
     //Para el icono
 
     const nav = document.createElement('nav');
