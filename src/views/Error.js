@@ -1,4 +1,5 @@
 import { header } from '../components/header.js';
+import { footer } from '../components/footer.js';
 export const Error = (props) => {
     const viewError = document.createElement("section");
     const contentError = document.createElement("section");
@@ -9,13 +10,9 @@ export const Error = (props) => {
         <p class="errorparrafo">
         Oops! Lo sentimos, no pudimos encontrar la pagina que buscas. Regresa a la pagina principal: </p>
         <img ="atras" src="./images/next.png" alt="atras"/>
-
-</div>
-`;
-viewError.appendChild(header());
-viewError.append(contentError);
+    </div>`;
+  viewError.append(header(),contentError,footer());
 return viewError;
-
 };
 
 // export function Error(props){

@@ -1,65 +1,67 @@
 //linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }))
 import { header } from '../components/header.js';
+import data from '../data/dataset.js';
+import { renderData } from '../components/RenderData.js';
 import { footer } from '../components/footer.js';
-import data from '../data/dataset.js'
-import { renderData } from '../components/renderData.js';
 //renderdata en componente no en datafuction
 export function Home(props) {
     const viewEl = document.createElement('div');
     const movieData = document.createElement("div");   // contenedor de cartas (o elementos HTML) que se generarán dinámicamente.
     movieData.className = "cartasContainer";
-    movieData.innerHTML = renderData(data) 
+    movieData.innerHTML = renderData(data)
 
     //Menu con todos los filtros y estadisticas
-    const hiddenMenu = document.createElement('div');
-    hiddenMenu.setAttribute("class" , "hiddenMenu");
-
     const ul = document.createElement('ul');
-    ul.setAttribute("class" , "ul");
+    ul.innerHTML = `
+    <ul class="homeMenu">
+    <li><a class="menuItem" href="#">Sort A-z</a></li>
+    <li><a class="menuItem" href="#">Filtra for Genero</a></li>
+    <li><a class="menuItem" href="#">Estadisticas</a></li>
+    </ul>
+   
+    <button class="hamburger">
+    <i id="menuIcon">menu</i>
+    <i id="closeIcon">close</i>
+    </button>`;
 
-    const sortAZ = document.createElement('li');
-    sortAZ.setAttribute("class" , "sortAZ");
-    sortAZ.textContent = `Sort by A-Z`;
+    const menu = document.querySelector(".homeMenu");
+    const menuItems = document.querySelectorAll(".menuItem");
+    const hamburger = document.querySelector(".hamburger");
+    const closeIcon = document.getElementById("#closeIcon");
+    const menuIcon = document.getElementById("#menuIcon");
 
-    const filter = document.createElement('li');
-    filter.setAttribute("class" , "filter");
-    filter.textContent = `Filtra por Genero`;
+    function toggleMenu() {
+        if (menu.classList.contains("showMenu")) {
+            menu.classList.remove("showMenu");
+            closeIcon.style.display = "none";
+            menuIcon.style.display = "block";
+        } else {
+            menu.classList.add("showMenu");
+            //closeIcon.style.display = "block";
+            //menuIcon.style.display = "none";
+            closeIcon.addEventListener('click', (event) => {
+                console.log("probando")
+            });
+        }
+    }
 
-    const statistics = document.createElement('li');
-    statistics.setAttribute("class" , "statistics");
-    statistics.textContent = `Estadisticas`;
-    //Para el icono
+    //hamburger.addEventListener('click', (toggleMenu) => {
+      //  console.log("probando")
+   // });
 
-    const nav = document.createElement('nav');
-    nav.setAttribute("class" , "nav"); 
-    const hamMenu = document.createElement('div');
-    hamMenu.className = "hamMenu";
 
-    const menu = document.querySelector('.hamMenu');
-    const hiddenmenu = document.querySelector('.hiddenMenu');
-    hamMenu.addEventListener ('click', () =>{
-        menu.classList.toggle('active');
-        hiddenmenu.classList.toggle('active');
-    })
+    menuItems.forEach(
+        function (menuItem) {
+            menuItem.addEventListener("click", toggleMenu);
+        }
+    )
+
     //Uniendo todo 
- 
+
     viewEl.appendChild(header());
-    viewEl.appendChild(hamMenu); 
-        viewEl.appendChild(hiddenMenu); 
-        viewEl.appendChild(ul);
-        viewEl.appendChild(sortAZ);
-        viewEl.appendChild(filter);
-        viewEl.appendChild(statistics);
-        viewEl.appendChild(nav);
-    
+    viewEl.appendChild(ul);
     viewEl.appendChild(movieData);
     viewEl.appendChild(footer());
     return viewEl;
-
-
-    
-
-
-
-
 }
+
