@@ -38,15 +38,20 @@ footer {
 
 .hamburger{
     background-image: url("./images/menu.png");
-    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    /* position: fixed;
     z-index: 100;
     top: 9rem;
     margin-left: 50px; 
-    padding: 4px;
+    padding: 4px; */
     cursor: pointer;
 }
 
-#closeIcon {
+.closeIcon {
     background-image: url("./images/cancel.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -135,29 +140,79 @@ ul {
 
 }
 
-button {
-    width: 250px;
-    height: 250px;
-    margin-top: 100px;
+buttonView {
+    display: flex;
+    width: 150px;
+    height: 45px;
+    border-radius: 15px 15px 15px 15px;
+    background-color: rgb(243, 213, 93);
+    color: black;
+    text-align: center;
+    font-size: 40px;
     cursor: pointer;
-    background: url("./images/play.png") center center/cover;
-
-    /* Adjust the width as needed */
-    height: 250px;
-    /* Adjust the height as needed */
-    margin-top: 100px;
-    /* Adjust the top margin as needed */
-    cursor: pointer;
-    background: url("./images/play.png") center center/cover;
-    /* Replace "your-image-path.jpg" with the path to your image */
-    /* Set the text color to be visible against the background image */
-
-    border: none;
-    outline: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    margin-bottom: 15px;
 }
+
+.viewMoreModal {
+    width: 50%;
+    height: 50%;
+    background-color: rgb(41, 40, 40);
+    border-radius: 15px 15px 15px 15px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+    -moz-box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+    box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+}
+
+.bttnclose{
+    background-image: url("./images/close.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    border-radius: 24px 24px 24px 24px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position:absolute;
+    left: 95%;
+}
+
+/*probando diseños menu*/
+.flex-container, .centrarboton{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+      
+    label[for="categorias"],
+    label[for="nombre"],
+    label[for="estadisticas"]{
+    font-family: 'Cambria';
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    margin-left: 40px;
+    margin-top: -100px;
+    }
+      
+    select{
+    border-radius: 20px;
+    width: 250px;
+    height: 50px;
+    font-size: 12px;
+    margin-top: -700px;
+    }
+    
+    button[data-testid="button-clear"]{
+        width: 180px;
+        font-size:20px;
+        margin: 50px;
+        border-radius: 10px;
+        line-height: 25px;
+        margin-top: -700px;
+        }
+
 
 /* Media query for smaller screens */
 
