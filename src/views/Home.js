@@ -3,55 +3,78 @@ import { header } from '../components/header.js';
 import data from '../data/dataset.js';
 import { renderData } from '../components/RenderData.js';
 import { footer } from '../components/footer.js';
+import { showMovieModal } from '../lib/datafunction.js';
 //renderdata en componente no en datafuction
 export function Home(props) {
     const viewEl = document.createElement('div');
     const movieData = document.createElement("div");   // contenedor de cartas (o elementos HTML) que se generarán dinámicamente.
     movieData.className = "cartasContainer";
-    movieData.innerHTML = renderData(data) 
+    movieData.innerHTML = renderData(data);
+
+    const showMovieModal = document.createElement('dialog');
+    showMovieModal.className = "viewMoreModal";
+    
+
+    movieData.addEventListener('click', (event) => {
+        if (event.target.matches('#btn')) {
+            showMovieModal.innerHTML = "Modal";
+            const btnclose = document.createElement("button");
+            btnclose.innerHTML="close";
+            btnclose.addEventListener('click',(event)=>{
+                showMovieModal.close();
+
+            });
+            showMovieModal.appendChild(btnclose);
+            showMovieModal.showModal();
+            console.log("Funciona")
+        }
+    });
+
+
 
     //Menu con todos los filtros y estadisticas
     const hiddenMenu = document.createElement('div');
-    hiddenMenu.setAttribute("class" , "hiddenMenu");
+    hiddenMenu.setAttribute("class", "hiddenMenu");
 
     const ul = document.createElement('ul');
-    ul.setAttribute("class" , "ul");
+    ul.setAttribute("class", "ul");
 
     const sortAZ = document.createElement('li');
-    sortAZ.setAttribute("class" , "sortAZ");
+    sortAZ.setAttribute("class", "sortAZ");
     sortAZ.textContent = "Sort by A-Z"
 
     const filter = document.createElement('li');
-    filter.setAttribute("class" , "filter");
+    filter.setAttribute("class", "filter");
 
     const statistics = document.createElement('li');
-    statistics.setAttribute("class" , "statistics");
+    statistics.setAttribute("class", "statistics");
 
     //Para el icono
 
     const nav = document.createElement('nav');
-    nav.setAttribute("class" , "nav"); 
+    nav.setAttribute("class", "nav");
     const hamMenu = document.createElement('div');
     hamMenu.className = "hamMenu";
 
     const menu = document.querySelector('.hamMenu');
     const hiddenmenu = document.querySelector('.hiddenMenu');
-    hamMenu.addEventListener ('click', () =>{
+    hamMenu.addEventListener('click', () => {
         menu.classList.toggle('active');
         hiddenmenu.classList.toggle('active');
     })
     //Uniendo todo 
- 
+
     viewEl.appendChild(header());
-    viewEl.appendChild(hamMenu); 
-        viewEl.appendChild(hiddenMenu); 
-        viewEl.appendChild(ul);
-        viewEl.appendChild(sortAZ);
-        viewEl.appendChild(filter);
-        viewEl.appendChild(statistics);
-        viewEl.appendChild(nav);
-    
+    viewEl.appendChild(hamMenu);
+    viewEl.appendChild(hiddenMenu);
+    viewEl.appendChild(ul);
+    viewEl.appendChild(sortAZ);
+    viewEl.appendChild(filter);
+    viewEl.appendChild(statistics);
+    viewEl.appendChild(nav);
+
     viewEl.appendChild(movieData);
+    viewEl.appendChild(showMovieModal);
     viewEl.appendChild(footer());
     return viewEl;
 

@@ -125,29 +125,32 @@ ul {
 
 }
 
-button {
-    width: 250px;
-    height: 250px;
-    margin-top: 100px;
+buttonView {
+    display: flex;
+    width: 150px;
+    height: 45px;
+    border-radius: 15px 15px 15px 15px;
+    background-color: rgb(243, 213, 93);
+    color: black;
+    text-align: center;
+    font-size: 40px;
     cursor: pointer;
-    background: url("./images/play.png") center center/cover;
-
-    /* Adjust the width as needed */
-    height: 250px;
-    /* Adjust the height as needed */
-    margin-top: 100px;
-    /* Adjust the top margin as needed */
-    cursor: pointer;
-    background: url("./images/play.png") center center/cover;
-    /* Replace "your-image-path.jpg" with the path to your image */
-    /* Set the text color to be visible against the background image */
-
-    border: none;
-    outline: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    margin-bottom: 15px;
 }
+
+.viewMoreModal {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(41, 40, 40);
+    border-radius: 15px 15px 15px 15px;
+    margin: 50px;
+    margin-left: 80px;
+    -webkit-box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+    -moz-box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+    box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+}
+
 
 /* Media query for smaller screens */
 
