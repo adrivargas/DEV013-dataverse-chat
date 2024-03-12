@@ -140,15 +140,27 @@ buttonView {
 }
 
 .viewMoreModal {
-    width: 100%;
+    width: 50%;
     height: 50%;
     background-color: rgb(41, 40, 40);
     border-radius: 15px 15px 15px 15px;
-    margin: 50px;
-    margin-left: 80px;
+    margin: 0 auto;
     -webkit-box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
     -moz-box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
     box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+}
+
+.bttnclose{
+    background-image: url("./images/close.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    border-radius: 24px 24px 24px 24px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position:absolute;
+    left: 95%;
 }
 
 

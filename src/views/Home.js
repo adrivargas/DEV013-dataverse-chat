@@ -17,16 +17,20 @@ export function Home(props) {
 
     movieData.addEventListener('click', (event) => {
         if (event.target.matches('#btn')) {
-            showMovieModal.innerHTML = "Modal";
             const btnclose = document.createElement("button");
-            btnclose.innerHTML="close";
+            btnclose.className = "bttnclose";
+            showMovieModal.appendChild(btnclose);
+            movieData.innerHTML = "";
+            const selectMovie = document.createElement("div");
+            selectMovie.innerHTML= `<li 
+            <img src="./images/next.png"> 
+            </li>`
             btnclose.addEventListener('click',(event)=>{
                 showMovieModal.close();
-
+                movieData.innerHTML = renderData(data);
             });
-            showMovieModal.appendChild(btnclose);
+            showMovieModal.appendChild(selectMovie);
             showMovieModal.showModal();
-            console.log("Funciona")
         }
     });
 
