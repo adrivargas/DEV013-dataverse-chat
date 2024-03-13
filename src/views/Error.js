@@ -7,10 +7,11 @@ export const Error = (props) => {
     
     errorBody.innerHTML = `
       <img = "errorpic" class="errorImg" src="./images/404-error.png" alt="404-error" />
-      <h1 class="error-texto">Error 404</h1>       
+      <h1 class="errorTitulo">Error 404</h1>       
       <p class="errorParrafo">
-        Oops! Lo sentimos, no pudimos encontrar la pagina que buscas. Regresa a la pagina principal: </p>
-      <img ="atras" src="./images/next.png" alt="atras"/>`;
+        Oops! Lo sentimos, no pudimos encontrar la pagina que buscas. 
+        Regresa a la pagina principal: </p>
+      <img ="atras" class="goBack" src="./images/next.png" alt="atras"/>`;
 
    
     viewError.appendChild(header());

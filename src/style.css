@@ -30,27 +30,69 @@ footer {
 
 }
 
-.errorImg{
-    width: 160px; 
-    height: 160px; 
+.popcorn{
+    width: 160px;
+     height: 160px;
+     position: absolute;
+     top: 500px;
+     left: 450px; 
+ }
+
+.welcomeTitle{
+    color: white;
+    font-size: 60px; 
+    margin-left: 400px;
+    margin-top: 300px;
+}
+
+
+.buttonPlay{
+    background-image: url("./images/play.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+.errorImg {
+    width: 160px;
+    height: 160px;
     position: absolute;
     top: 500px;
     left: 450px;
-    
+
 }
 
-.error-texto{
-    font-size: 40px; 
-    color: red; 
-    margin-left: 450px; 
-    margin-top: 10px; 
-    
+.errorTitulo {
+    font-size: 40px;
+    color: white;
+    margin-left: 450px;
+    margin-top: 300px;
+
 }
 
-.errorParrafo{
-    font-size: 18px; 
-    margin: 250px; 
-    
+.errorParrafo {
+    font-size: 18px;
+    margin: 290px;
+    margin-top: 50px;
+
+}
+
+.goBack {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 950px;
+    left: 480px;
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 p,
@@ -184,28 +226,30 @@ button[data-testid="button-clear"] {
     width: 150px;
     font-size: 14px;
     margin: 10px;
-    padding: 5px; 
+    padding: 5px;
     border-radius: 20px;
     line-height: 25px;
     color: rgb(243, 213, 93);
-    
-    
+
+
 }
 
 .estadisticasTitle {
     color: rgb(243, 213, 93);
     font-size: 18px;
     padding: 10px;
-    margin-left: 55px; 
+    margin-left: 55px;
 }
 
-#premiosPorGenero, #premiosTotal{
-    color: rgb(243, 213, 93); 
-    background-color: #d0cfc41c; 
-    width: 150px; 
-    border-radius: 20px; 
-    
+#premiosPorGenero,
+#premiosTotal {
+    color: rgb(243, 213, 93);
+    background-color: #d0cfc41c;
+    width: 150px;
+    border-radius: 20px;
+
 }
+
 /* Media query for smaller screens */
 
 @media screen and (max-width: 1280px) {
