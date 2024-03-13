@@ -96,6 +96,20 @@ footer {
 
 }
 
+p{
+    font-size: large;
+    color:white;
+    margin: 0 auto;
+}
+.mantenimiento{
+    background-image: url(./images/monitoring.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 50%;
+    
+}
 p,
 .about {
     font-size: 5vw;
