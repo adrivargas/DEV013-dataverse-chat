@@ -12,19 +12,14 @@ export function Home(props) {
     movieData.className = "cartasContainer";
     movieData.innerHTML = renderData(data);
 
-    //Menu con todos los filtros y estadisticas
-    const divMenu = document.createElement('div');
+    
+    const divMenu = document.createElement('div'); //Menu con todos los filtros y estadisticas
     divMenu.id = "divMenu";
     divMenu.appendChild(Filters())
    
-  
-    
-    
-
     const showMovieModal = document.createElement('dialog');
     showMovieModal.className = "viewMoreModal";
     
-
     movieData.addEventListener('click', (event) => {
         if (event.target.matches('#btn')) {
             const btnclose = document.createElement("button");

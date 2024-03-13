@@ -12,13 +12,13 @@ export const Filters = () => {
       <option value="Fantasia">Fantasia</option>
       <option value="Comedia">Comedia</option>
       </select>
-      <label for="nombre"> </label>
+    <label for="nombre"> </label>
       <select data-testid="select-sort" id="nombre" name="orden">
       <option value="Ordene">Ordene</option> 
       <option value="asc">A-Z</option>
       <option value="desc">Z-A</option>
       </select>
-      <label for="premiosPorGenero" class="estadisticasTitle" >Estadisticas de Premios: </label> 
+    <label for="premiosPorGenero" class="estadisticasTitle" >Estadisticas: </label> 
       <button id="premiosPorGenero">Ingresos por Genero</button>
       <button id="premiosTotal">Total Premios Ganados</button>
     </div>
