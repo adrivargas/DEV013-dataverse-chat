@@ -41,16 +41,20 @@ const renderView = (pathname, props={}) => {
   // add the view element to the DOM root element
   const root = rootEl;
   root.innerHTML = "";
-  const viewPath = ROUTES[pathname] || ROUTES['error'];//Nos falta  comprobar view error
-  const viewRender = viewPath(props);//Asignamos valor a props
-  root.appendChild(viewRender);
+  if (ROUTES[pathname]) {
+    const routesView = ROUTES[pathname](props);
+    root.append(routesView);
+  } else {
+    root.append(ROUTES["/error"]());
+  }
 } 
 
 export const navigateTo = (pathname, props={}) => {
   // update window history with pushState
   // render the view with the pathname and props
-  const viewPath = ROUTES[pathname];
-  history.pushState(viewPath,{});
+  //const viewPath = ROUTES[pathname];
+  history.pushState({}, "", pathname);
+  console.log(window.history)
   renderView(pathname, props);
 }
 

@@ -1,6 +1,8 @@
 
 import { header } from '../components/header.js';
 import { footer } from '../components/footer.js';
+import { navigateTo } from '../router.js';
+import { Home } from './home.js';
 
 
 export const Bienvenida = (props) => {
@@ -13,7 +15,8 @@ export const Bienvenida = (props) => {
       <h1 class="welcomeTitle">Bienvenida!</h1>  
       <button class="buttonPlay" ></button>`;
     
-    
+    welcomeBody.addEventListener('click',()=>navigateTo("/home"),{id: props.id});
+
     viewEl.appendChild(header());
     viewEl.appendChild(welcomeBody);
     viewEl.appendChild(footer());

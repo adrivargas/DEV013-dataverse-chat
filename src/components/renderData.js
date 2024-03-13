@@ -19,8 +19,7 @@ export const renderData = (data) => {
     </ul>`
   });
 
-  // Retornar el contenedor actualizado
-  console.log(root);
+  // Retornar el contenedor actualiz
   return root;
 
 };
