@@ -22,10 +22,10 @@ export function Home({ id }) {
 
     //const selectSort = document.querySelector('[data-testid="select-sort"]');
     
-    const selectFilter = document.querySelector('[data-testid="select-filter"]');
-    const selectSort = filtersElement.getElementByid('[data-testid="select-filter"]');
+    const selectFilter = filtersElement.querySelector('[data-testid="select-filter"]');
+    const selectSort = filtersElement.getElementsByClassName("categorias");
     console.log(filtersElement);
-    console.log(selectSort);
+    console.log(selectFilter);
     // selectSort.addEventListener('click',(event)=>{
     //     console.log("valw");
 
