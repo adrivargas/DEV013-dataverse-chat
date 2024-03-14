@@ -18,7 +18,7 @@ export function Home({ id }) {
     const divMenu = document.createElement('div'); //Menu con todos los filtros y estadisticas
     divMenu.id = "divMenu";
     divMenu.appendChild(Filters())
-
+    
     
     movieData.addEventListener('click', () =>navigateTo('/movieInfo'),{} 
     );
