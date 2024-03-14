@@ -66,7 +66,4 @@ export const calcularEstadisticasIngresosPorGenero = (data) => {
 };
 
 
-export function showMovieModal(movie) {
-  
 
-}
