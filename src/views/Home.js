@@ -17,7 +17,7 @@ export function Home({ id }) {
     const divMenu = document.createElement('div'); //Menu con todos los filtros y estadisticas
     const filtersElement = Filters();
     divMenu.id = "divMenu";
-    
+    divMenu.appendChild(filtersElement);
 
     //const selectSort = document.querySelector('[data-testid="select-sort"]');
     
@@ -38,9 +38,6 @@ export function Home({ id }) {
     // Llama a la función renderItems y actualiza el contenido del contenedor
     // const showData = renderData(datosOrdenados);
     // viewEl.appendChild(showData);
-
-    
-    
 
     
     movieData.addEventListener('click', () =>navigateTo('/movieInfo'),{} 
