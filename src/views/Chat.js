@@ -1,34 +1,38 @@
 import { header } from '../components/header.js';
+
+
 export function Chat() {
+  const chatView = document.createElement('div');
+  const chatWindow =document.createComment('div');
+  chatWindow.className = "chatwindow"
+  
+  const chatBox = document.createElement('div');
+  chatBox.innerHTML = `
+   <div class="chatbox">
+    
+    <h2 class="titleChat">Online</h2>
+    
+    <ul class="chatbox">
+      <li class="chatReceived>
+      <img = "chaticon" class="chaticon" src="./data//dataset/imageURL" alt="chaticon"/>
+        <p> Hola! en que te puedo ayudar? </p>
+      </li>
+      <li class="chatSent>
+        <p class="sending">Hola!</p>
+      </li>
+    </ul>
+    <div>
+      <textarea placeholder="Escriba aqui..."></textarea>
+      <span id="sendbutton" class="iconchat"></span>
+    </div>
+   </div>`;
 
-  const chatMain = document.createElement('div');
-  chatMain.setAttribute("class", "chatMain");
+   chatView.appendChild(header());
+   chatView.appendChild(chatWindow);
+   chatView.appendChild(chatBox);
+  
 
-    const chatTitle = document.createElement('h2');
-    chatTitle.setAttribute("class", "chatTitle");
-    chatTitle.textContent = "Bienvenido";
-
-    const messageArea = document.createElement('div');
-    messageArea.setAttribute("class", "messageArea");
-
-    const robot = document.createElement('div');
-    robot.setAttribute("class", "robot");
-
-    const bot = document.createElement('div');
-    bot.setAttribute("class", "bot");
-
-    const botName = document.createElement('h3');
-    botName.setAttribute("class", "botName");
-    botName.textContent = "Online";
-
-  const input = document.createElement('div');
-  input.setAttribute("class", "input");
-
-    const messageInput = createElement ('input');
-
-
-
-    //chat.textContent = 'This is the About page.';
-    //viewEl.appendChild(header());
-    //return viewEl;` `
+return chatView;
 }
+
+
