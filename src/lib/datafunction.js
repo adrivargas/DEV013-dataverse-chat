@@ -1,6 +1,6 @@
 export const ordenarNombresAZ = (data) => {
 
-  const dataOrdenada = data.slice().sort((a,b)=>{
+   const dataOrdenada = data.slice().sort((a,b)=>{
     const nombreA = a.name.toUpperCase();
     const nombreB = b.name.toUpperCase();
 
@@ -63,6 +63,28 @@ export const calcularEstadisticasIngresosPorGenero = (data) => {
 
     return acumulador;
   }, {});
+};
+
+// Estadísticas por género 
+
+export const premiosGanadosTotal = (data) => {
+  const sumaTotalPremiosGanados = data.reduce(function(total, movie) {
+    if (movie.facts && typeof movie.facts.premioGanado === 'number') {
+      return total + movie.facts.premioGanado;
+    }
+    return total 
+  }, 0);
+
+  
+  return sumaTotalPremiosGanados;
+};
+
+export const promedioPremiosGanados = (data) => {
+  const sumaTotalPremiosGanados = premiosGanadosTotal(data);
+  const promedioPremios = data.length > 0 ? sumaTotalPremiosGanados / data.length : 0;
+
+  
+  return promedioPremios;
 };
 
 

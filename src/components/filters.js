@@ -1,6 +1,6 @@
 export const Filters = () => {
-    const article = document.createElement("article");
-    article.innerHTML = `
+    const articlediv = document.createElement("div");
+    articlediv.innerHTML = `
     <label for="categorias"> </label>
       <select data-testid="select-filter" id="categorias" name="genero">
       <option value="">Seleccione Categoría</option> 
@@ -13,7 +13,7 @@ export const Filters = () => {
       <option value="Comedia">Comedia</option>
       </select>
     <label for="nombre"> </label>
-      <select data-testid="select-sort" id="nombre" name="orden">
+      <select data-testid="select-sort" id="nombre" name="orden" >
       <option value="Ordene">Ordene</option> 
       <option value="asc">A-Z</option>
       <option value="desc">Z-A</option>
@@ -43,6 +43,6 @@ export const Filters = () => {
     </div>
       `
 
-      return article;
+      return articlediv;
 
 }
