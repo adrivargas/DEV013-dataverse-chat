@@ -278,84 +278,23 @@ button[data-testid="button-clear"] {
 
 /* chat individual */
 
-.chatwindow {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+.chatContainer{
+    width: 80px;
+    height: 80px; 
 }
 
-.titleChat {
-    margin: 0;
-    padding: 10px;
-    background-color: #333;
+.inputmessage{
+    width: 40px;
+    height: 20px;
+}
+#chatpanel{
+    width: 60px;
+    height: 30px;
+}
+
+.sendmessage{
     color: white;
-    display: flex;
-    align-items: center;
-}
-
-.onlineStatus {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: green;
-    margin-right: 5px;
-}
-
-.chatbox {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 10px;
-}
-
-.chatbox ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.chatbox li {
-    margin-bottom: 10px;
-}
-
-.chatReceived {
-    display: flex;
-    align-items: flex-start;
-}
-
-.chatSent {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.chaticon {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.chatReceived p,
-.chatSent p {
-    background-color: #f2f2f2;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-textarea {
-    width: calc(100% - 50px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-}
-
-.iconchat {
-    width: 30px;
-    height: 30px;
-    background-image: url('path_to_your_icon_image');
-    background-size: cover;
-    cursor: pointer;
+    background-color: purple;
 }
 
 /*Api view */

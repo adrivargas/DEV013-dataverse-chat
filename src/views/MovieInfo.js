@@ -22,3 +22,5 @@ export function MovieInfo({id}){
     container.appendChild(footer());
     return container;
 }
+
+
