@@ -4,6 +4,7 @@ import {Chat} from './views/Chat.js';
 import {Error} from './views/Error.js';
 import {Bienvenida} from './views/Bienvenida.js';
 import { MovieInfo } from './views/MovieInfo.js';
+import { apiKeyRequest } from './views/ApiRequest.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
 
@@ -19,7 +20,8 @@ const routes = {
   '/chat': Chat,
   '/home': Home,
   '/error': Error,
-  '/movieInfo': MovieInfo
+  '/movieInfo': MovieInfo,
+  '/apirequest': apiKeyRequest,
 };
 
 // Assign the routes
