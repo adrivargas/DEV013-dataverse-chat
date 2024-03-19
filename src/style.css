@@ -273,6 +273,8 @@ button[data-testid="button-clear"] {
     height: 50px;
 }
 
+
+
 /* chat individual */
 .chatwindow {
     background-color: #222; /* Dark grey background */
@@ -321,6 +323,7 @@ button[data-testid="button-clear"] {
     }
 
 
+    
 /* Media query for smaller screens */
 
 @media screen and (max-width: 1280px) {
