@@ -13,7 +13,7 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 1200px;
+    height: 800px;
     margin-top: 100px;
     display: flex;
 }
@@ -230,25 +230,28 @@ label[for="estadisticas"] {
 
 select {
     text-align: center;
-    border-radius: 20px;
-    width: 200px;
-    height: 40px;
-    font-size: 14px;
+    border-radius: 25px;
+    width: 300px;
+    height: 70px;
+    font-size: 25px;
     margin-top: -700px;
-    color: #3e3e07;
+    margin-left: 250px;
+    margin: 0 auto;
+    color:rgb(205, 153, 12);
+    background-color: black;
 }
 
 button[data-testid="button-clear"] {
-    background-color: #d0cfc41c;
-    width: 150px;
-    font-size: 14px;
-    margin: 10px;
+    background-color:black;
+    width: 180px;
+    height:60px;
+    font-size: 30px;
+    margin-top: -95px;
+    margin-left: 600px;
     padding: 5px;
     border-radius: 20px;
     line-height: 25px;
-    color: rgb(243, 213, 93);
-
-
+    color:rgb(205, 153, 12);
 }
 
 .estadisticasTitle {
@@ -260,11 +263,17 @@ button[data-testid="button-clear"] {
 
 #premiosPorGenero,
 #premiosTotal {
-    color: rgb(243, 213, 93);
-    background-color: #d0cfc41c;
-    width: 150px;
-    border-radius: 20px;
-
+    padding: 1%;
+    font-size: 28px;
+    border-radius: 25px;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: -700px;
+    color:rgb(205, 153, 12);
+    background-color: black;
+}
+#premiosTotal{
+    font-size: 25px;
 }
 
 .btnHome {
@@ -276,25 +285,73 @@ button[data-testid="button-clear"] {
     height: 50px;
 }
 
-
-
-/* chat individual */
-
-.chatContainer{
-    width: 80px;
-    height: 80px; 
+#button-clear {
+    width: 180px;
+    font-size: 20px;
+    margin: 50px;
+    border-radius: 10px;
+    line-height: 25px;
+    margin-top: -700px;
+}
+.cerrarBoton1{
+    width: 180px;
+    font-size: 20px;
+    margin: 50px;
+    border-radius: 10px;
+    line-height: 25px;
 }
 
-.inputmessage{
+.cerrarBoton2{
+    width: 180px;
+    font-size: 20px;
+    margin: 50px;
+    border-radius: 10px;
+    line-height: 25px;
+}
+.statsPremios1,
+.statsPremios2 {
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: white;
+    width: 80%;
+    background-color: rgb(41, 40, 40);
+    border-radius: 15px 15px 15px 15px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+    -moz-box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+    box-shadow: 0px 15px 20px -5px hsla(59, 100%, 48%, 0.651);
+}
+
+.statsPremios1::backdrop {
+    background: black;
+    opacity: 50%;
+}
+
+.statsPremios2::backdrop {
+    background: black;
+    opacity: 50%;
+}
+/* chat individual */
+
+.chatContainer {
+    width: 80px;
+    height: 80px;
+}
+
+.inputmessage {
     width: 40px;
     height: 20px;
 }
-#chatpanel{
+
+#chatpanel {
     width: 60px;
     height: 30px;
 }
 
-.sendmessage{
+.sendmessage {
     color: white;
     background-color: purple;
 }
@@ -312,23 +369,21 @@ button[data-testid="button-clear"] {
     padding: 10px;
     margin-left: 100px;
     margin-right: 100px;
-    border-radius: 30px; 
+    border-radius: 30px;
 }
 
 .enterApi {
     margin: 50px;
     height: 50px;
     width: 250px;
-    border-radius: 30px; 
-    font-size: 18px; 
-    color: white; 
+    border-radius: 30px;
+    font-size: 18px;
+    color: white;
     background-color: #8121be
-    
-    
 }
 
 
-    
+
 /* Media query for smaller screens */
 
 @media screen and (max-width: 1280px) {

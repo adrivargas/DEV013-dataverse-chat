@@ -4,22 +4,33 @@ import { footer} from '../components/footer.js';
 import { renderData } from '../components/RenderData.js';
 import { navigateTo } from '../router.js';
 export function MovieInfo({id}){
-    const foundView = data.find((item) => item.id === id);
+    
     const container = document.createElement('div');
-    const prueba = document.createElement('p');
+    container.id = "containerMovie";
     const icono = document.createElement('div');
     const btnHome = document.createElement('button');
     btnHome.className = "btnHome";
     btnHome.addEventListener('click',()=>navigateTo("/home",{}));
-    // const movieInfo = document.getElementsByClassName("card-movie");
-    const datos = renderData(data);
-    prueba.innerHTML = "Estamos en mantenimiento, regrese pronto";
-    console.log(datos);
-    container.appendChild(header());
-    container.appendChild(btnHome);
-    container.appendChild(prueba);
-    // prueba.appendChild(movieInfo);
-    container.appendChild(footer());
+    
+    // Obtener el Id de la tarjeta seleccionada de los parámetros de la URL
+    const selectedMovie = data.find((movie) => movie.id === id);
+    console.log(selectedMovie);
+  
+    // Filtra los datos para obtener solo la tarjeta seleccionada
+    const selectedMovieInfo = data.find(
+      (movies) => movies.id === selectedMovie
+    );
+    console.log(selectedMovieInfo);
+    //   if (selectedMovieInfo) {
+    //     const longCard = renderData([selectedMovieInfo]);
+    //     container.appendChild(longCard);
+    //   } else {
+    //     // Mensaje cuando no se encuentra la tarjeta
+    //     const errorMessage = document.createElement("p");
+    //     errorMessage.textContent = "Tarjeta no encontrada";
+    //     container.appendChild(errorMessage);
+    // }
+    container.append(header(),btnHome, footer());
     return container;
 }
 

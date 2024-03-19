@@ -10,30 +10,33 @@ import { ordenarNombresAZ, ordenarNombresZA, generoMovies, calcularEstadisticasI
 export function Home({ id }) {
   const foundView = data.find((item) => item.id === id);
   const viewEl = document.createElement('div');
-  const movieData = document.createElement("div");
+  const movieData = document.createElement('div');
+  const filterElement = document.createElement('div');
+  filterElement.className = "Filtros";
+  filterElement.appendChild(Filters());
   let datosOrdenados = [...data];  // contenedor de cartas (o elementos HTML) que se generarán dinámicamente.
   
   movieData.className = "cartasContainer";
   movieData.innerHTML = renderData(data);
    //----------Uniendo todo ------------------------------------//
-  viewEl.append(header(), Filters(), movieData, footer());
-  const selectFilter = viewEl.querySelector('[data-testid="select-filter"]');
-  const selectSort = viewEl.querySelector("#nombre");
+  viewEl.append(header(), filterElement, movieData, footer());
+  const selectFilter = filterElement.querySelector('[data-testid="select-filter"]');
+  const selectSort = filterElement.querySelector("#nombre");
   
   //----------Botones--------------//
   const btnClear = viewEl.querySelector('[data-testid="button-clear"]')
-  const btnPremiosGenero = viewEl.querySelector("#premiosPorGenero");
-  const btnPremioTotal = viewEl.querySelector("#premiosTotal")
-  const btnClose = viewEl.querySelector('#cerrarBoton1');
-  const btnCloseT = viewEl.querySelector('#cerrarBoton2')
+  const btnPremiosGenero = filterElement.querySelector("#premiosPorGenero");
+  const btnPremioTotal = filterElement.querySelector("#premiosTotal")
+  const btnClose = filterElement.querySelector('#cerrarBoton1');
+  const btnCloseT = filterElement.querySelector('#cerrarBoton2')
 
   //----------------Funciones--------------------//
   const imprimirEstadisticasPorGenero = (estadisticas) => {
-    const dialog = viewEl.querySelector("#statsPremios1");
-    const generoTitulo = viewEl.querySelector("#generoTitulo");
-    const cantidadPeliculas = viewEl.querySelector("#cantidadPeliculas");
-    const totalIngresos = viewEl.querySelector("#totalIngresos");
-    const ingresoPromedio = viewEl.querySelector("#ingresoPromedio");
+    const dialog = filterElement.querySelector("#statsPremios1");
+    const generoTitulo = filterElement.querySelector("#generoTitulo");
+    const cantidadPeliculas = filterElement.querySelector("#cantidadPeliculas");
+    const totalIngresos = filterElement.querySelector("#totalIngresos");
+    const ingresoPromedio = filterElement.querySelector("#ingresoPromedio");
 
     // Limpiar contenido previo
     generoTitulo.innerHTML = '';
@@ -74,9 +77,9 @@ export function Home({ id }) {
   };
 
   const mostrarEstadisticasPremios = (totalPremios, promedioPremios) => {
-    const dialog2 = viewEl.querySelector("#statsPremios2");
-    const totalSuma = viewEl.querySelector("#totalSumaPremios");
-    const totalPromedio = viewEl.querySelector("#promedioSumaPremios");
+    const dialog2 = filterElement.querySelector("#statsPremios2");
+    const totalSuma = filterElement.querySelector("#totalSumaPremios");
+    const totalPromedio = filterElement.querySelector("#promedioSumaPremios");
 
 
     totalSuma.textContent = "";
@@ -144,11 +147,14 @@ export function Home({ id }) {
     dialog.close();
   })
   //-----------------Navigate-----------------//
-  movieData.addEventListener('click', () => navigateTo('/movieInfo'), {});
-
- 
-
-
+  const btnViewMore = movieData.querySelector(".card-movie")
+  btnViewMore.forEach((movies) => {
+    movies.addEventListener("click", () => {
+      const movieId = movies.getAttribute("id");
+      navigateTo("/movieInfo", { id: movieId });
+      console.log(movieId);
+    });
+  });
   return viewEl;
 }
 
