@@ -1,3 +1,7 @@
+import dataset from "../data/dataset";
+import { header } from "../components/header";
+
+
 export const chatIndividual = () =>{
 const mainPage = document.createElement("article");
 const inputMain = document.createElement("input");
