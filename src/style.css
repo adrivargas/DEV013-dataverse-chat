@@ -30,23 +30,23 @@ footer {
 
 }
 
-.popcorn{
+.popcorn {
     width: 160px;
-     height: 160px;
-     position: absolute;
-     top: 500px;
-     left: 450px; 
- }
+    height: 160px;
+    position: absolute;
+    top: 500px;
+    left: 450px;
+}
 
-.welcomeTitle{
+.welcomeTitle {
     color: white;
-    font-size: 60px; 
+    font-size: 60px;
     margin-left: 400px;
     margin-top: 300px;
 }
 
 
-.buttonPlay{
+.buttonPlay {
     background-image: url("./images/play.png");
     background-color: transparent;
     background-repeat: no-repeat;
@@ -96,20 +96,22 @@ footer {
 
 }
 
-p{
+p {
     font-size: large;
-    color:white;
+    color: white;
     margin: 0 auto;
 }
-.mantenimiento{
+
+.mantenimiento {
     background-image: url(./images/monitoring.png);
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
     width: 50%;
     height: 50%;
-    
+
 }
+
 p,
 .about {
     font-size: 5vw;
@@ -264,7 +266,8 @@ button[data-testid="button-clear"] {
     border-radius: 20px;
 
 }
-.btnHome{
+
+.btnHome {
     background-image: url(./images/home.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -274,51 +277,53 @@ button[data-testid="button-clear"] {
 }
 
 /* chat individual */
-.chatwindow {
-    background-color: #222; /* Dark grey background */
-    position: center; 
-    }
+
+.chatContainer{
+    width: 80px;
+    height: 80px; 
+}
+
+.inputmessage{
+    width: 40px;
+    height: 20px;
+}
+#chatpanel{
+    width: 60px;
+    height: 30px;
+}
+
+.sendmessage{
+    color: white;
+    background-color: purple;
+}
+
+/*Api view */
+.messageApi {
+    font-size: 20px;
+    position: center;
+    margin: 50px;
+}
+
+.passwordArea {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 30px; 
+}
+
+.enterApi {
+    margin: 50px;
+    height: 50px;
+    width: 250px;
+    border-radius: 30px; 
+    font-size: 18px; 
+    color: white; 
+    background-color: #8121be
     
-    .chatbox{
-        margin: 40px;
-        padding: 50px; 
-    }
     
-    .titleChat {
-      color: white;
-      padding: 10px;
-      margin: 40px;
-      text-align: center; 
-      background-color: #444; /* Darker grey for title background */
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-    
-    
-    .chatReceived {
-      background-color: #333; /* Grey background for received messages */
-      padding: 10px;
-      margin-bottom: 5px;
-      border-radius: 5px;
-    }
-    
-    .chatSent {
-      background-color: white; /* White background for sent messages */
-      padding: 10px;
-      margin-bottom: 5px;
-      border-radius: 5px;
-    }
-    
-    
-    
-    textarea {
-      width: calc(100% - 40px); /* Adjust for the send button */
-      padding: 10px;
-      border: none;
-      border-top: 1px solid #444; /* Darker grey border on top */
-      resize: none;
-      outline: none;
-    }
+}
 
 
 /* Media query for smaller screens */
