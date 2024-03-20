@@ -336,26 +336,62 @@ button[data-testid="button-clear"] {
 }
 /* chat individual */
 
-.chatContainer {
-    width: 80px;
-    height: 80px;
+.mainchat{
+    margin: 0 auto;
+    width: 1000px;
+    height: 900px;
+    background-color: rgb(44, 38, 38);
+    border-radius: 15px 15px 15px 15px;
+}
+.secondaryheader{
+    margin: 0px;
+    width: 1000px;
+    height: 60px;
+    background-color: rgb(75, 65, 65);
+    border-radius: 15px 15px 15px 15px;
 }
 
-.inputmessage {
-    width: 40px;
-    height: 20px;
+.online{
+    font-size: 20px;
+    margin-right: 80px;
+    padding-top: 15px;
 }
 
-#chatpanel {
-    width: 60px;
+#icono{
+    background-image: url(./images/play.png);
+    background-size: 50px;
+    border-radius: 50%;
+    width: 30px;
     height: 30px;
 }
 
-.sendmessage {
-    color: white;
-    background-color: purple;
+.burbujachat{
+    background-color: white;
+    width: 500px;
+    height: 50px;
+    margin-top: 50px; 
+    border-radius: 15px 15px 15px 15px;
+    margin-left: 400px;
+}
+.burbujamovie{
+    background-color: white;
+    width: 500px;
+    height: 50px;
+    margin: 50px;
+    margin-right: 100px;
+    border-radius: 15px 15px 15px 15px;
 }
 
+.inputuser{
+    background-color: white;
+    width: 500px;
+    height: 50px;
+    border-radius: 15px 15px 15px 15px;
+}
+textarea{
+    width: 500px;
+    height: 50px;
+}
 /*Api view */
 .messageApi {
     font-size: 20px;

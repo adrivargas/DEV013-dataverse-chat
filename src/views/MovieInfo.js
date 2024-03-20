@@ -13,14 +13,14 @@ export function MovieInfo({id}){
     btnHome.addEventListener('click',()=>navigateTo("/home",{}));
     
     // Obtener el Id de la tarjeta seleccionada de los parámetros de la URL
-    const selectedMovie = data.find((movie) => movie.id === id);
-    console.log(selectedMovie);
+    // const selectedMovie = data.find((movie) => movie.id === id);
+    // console.log(selectedMovie);
   
     // Filtra los datos para obtener solo la tarjeta seleccionada
-    const selectedMovieInfo = data.find(
-      (movies) => movies.id === selectedMovie
-    );
-    console.log(selectedMovieInfo);
+    // const selectedMovieInfo = data.find(
+    //   (movies) => movies.id === selectedMovie
+    // );
+    // console.log(selectedMovieInfo);
     //   if (selectedMovieInfo) {
     //     const longCard = renderData([selectedMovieInfo]);
     //     container.appendChild(longCard);

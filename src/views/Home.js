@@ -1,6 +1,6 @@
 //linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }))
-import { header } from '../components/header.js';
 import data from '../data/dataset.js';
+import { header } from '../components/header.js';
 import { renderData } from '../components/RenderData.js';
 import { footer } from '../components/footer.js';
 import { Filters } from '../components/filters.js';
@@ -147,14 +147,14 @@ export function Home({ id }) {
     dialog.close();
   })
   //-----------------Navigate-----------------//
-  const btnViewMore = movieData.querySelector(".card-movie")
-  btnViewMore.forEach((movies) => {
-    movies.addEventListener("click", () => {
-      const movieId = movies.getAttribute("id");
-      navigateTo("/movieInfo", { id: movieId });
-      console.log(movieId);
-    });
-  });
+  // const btnViewMore = movieData.querySelector(".card-movie")
+  // btnViewMore.forEach((movies) => {
+  //   movies.addEventListener("click", () => {
+  //     const movieId = movies.getAttribute("id");
+  //     navigateTo("/movieInfo", { id: movieId });
+  //     console.log(movieId);
+  //   });
+  // });
   return viewEl;
 }
 
