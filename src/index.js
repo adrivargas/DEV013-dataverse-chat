@@ -1,6 +1,6 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 import { Home } from './views/home.js';
-import {chatIndividual} from './components/inputmessage.js';
+import { chatIndividual } from './views/chatIndividual.js';
 import {Error} from './views/Error.js';
 import {Bienvenida} from './views/Bienvenida.js';
 import { MovieInfo } from './views/MovieInfo.js';
