@@ -1,5 +1,6 @@
+//import { header} from "../components/header";
 import dataset from "../data/dataset";
-import { header } from "../components/header";
+
 
 
 export const chatIndividual = () =>{
@@ -17,7 +18,7 @@ sendButton.id = "sendbutton"
 sendButton.textContent = "Send";
 
 
-
+mainPage.appendChild(header());
 mainPage.appendChild(inputMain);
 mainPage.appendChild(sendButton);
 

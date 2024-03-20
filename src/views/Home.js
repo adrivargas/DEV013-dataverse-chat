@@ -147,14 +147,14 @@ export function Home({ id }) {
     dialog.close();
   })
   //-----------------Navigate-----------------//
-  const btnViewMore = movieData.querySelector(".card-movie")
-  btnViewMore.forEach((movies) => {
-    movies.addEventListener("click", () => {
-      const movieId = movies.getAttribute("id");
-      navigateTo("/movieInfo", { id: movieId });
-      console.log(movieId);
-    });
-  });
+  // const btnViewMore = movieData.querySelector(".card-movie")
+  // btnViewMore.forEach((movies) => {
+  //   movies.addEventListener("click", () => {
+  //     const movieId = movies.getAttribute("id");
+  //     navigateTo("/movieInfo", { id: movieId });
+  //     console.log(movieId);
+  //   });
+  // });
   return viewEl;
 }
 
