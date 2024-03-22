@@ -15,7 +15,7 @@ export const renderData = (data) => {
     </div>
     </dl>
     </li>
-    <div><buttonView id= "btn" >Ver Más</buttonView></div>
+    <div><buttonView id= "btnView" >Ver Más</buttonView></div>
     </ul>`
   });
 

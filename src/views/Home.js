@@ -5,7 +5,7 @@ import { renderData } from '../components/RenderData.js';
 import { footer } from '../components/footer.js';
 import { Filters } from '../components/filters.js';
 import { navigateTo } from '../router.js';
-import { ordenarNombresAZ, ordenarNombresZA, generoMovies, calcularEstadisticasIngresosPorGenero,premiosGanadosTotal, promedioPremiosGanados } from '../lib/datafunction.js';
+import { ordenarNombresAZ, ordenarNombresZA, generoMovies, calcularEstadisticasIngresosPorGenero, premiosGanadosTotal, promedioPremiosGanados } from '../lib/datafunction.js';
 //renderdata en componente no en datafuction
 export function Home({ id }) {
   const foundView = data.find((item) => item.id === id);
@@ -15,20 +15,24 @@ export function Home({ id }) {
   filterElement.className = "Filtros";
   filterElement.appendChild(Filters());
   let datosOrdenados = [...data];  // contenedor de cartas (o elementos HTML) que se generarán dinámicamente.
-  
+
   movieData.className = "cartasContainer";
   movieData.innerHTML = renderData(data);
-   //----------Uniendo todo ------------------------------------//
+
+  //----------Uniendo todo ------------------------------------//
   viewEl.append(header(), filterElement, movieData, footer());
   const selectFilter = filterElement.querySelector('[data-testid="select-filter"]');
   const selectSort = filterElement.querySelector("#nombre");
-  
+
+
   //----------Botones--------------//
   const btnClear = viewEl.querySelector('[data-testid="button-clear"]')
   const btnPremiosGenero = filterElement.querySelector("#premiosPorGenero");
   const btnPremioTotal = filterElement.querySelector("#premiosTotal")
   const btnClose = filterElement.querySelector('#cerrarBoton1');
-  const btnCloseT = filterElement.querySelector('#cerrarBoton2')
+  const btnCloseT = filterElement.querySelector('#cerrarBoton2');
+
+
 
   //----------------Funciones--------------------//
   const imprimirEstadisticasPorGenero = (estadisticas) => {
@@ -92,14 +96,14 @@ export function Home({ id }) {
 
 
   //---------------Listener--------------//
-  
+
   selectSort.addEventListener('change', () => {
-   if (selectSort.value === 'asc') {
-    datosOrdenados = ordenarNombresAZ(datosOrdenados);
+    if (selectSort.value === 'asc') {
+      datosOrdenados = ordenarNombresAZ(datosOrdenados);
     } else if (selectSort.value === 'desc') {
       datosOrdenados = ordenarNombresZA(datosOrdenados);
     }
-     movieData.innerHTML = renderData(datosOrdenados);
+    movieData.innerHTML = renderData(datosOrdenados);
   });
 
   selectFilter.addEventListener('change', () => {
@@ -141,20 +145,27 @@ export function Home({ id }) {
     const dialog = viewEl.querySelector("#statsPremios1");
     dialog.close();
   })
-  
+
   btnCloseT.addEventListener('click', () => {
     const dialog = viewEl.querySelector("#statsPremios2");
     dialog.close();
   })
-  //-----------------Navigate-----------------//
-  // const btnViewMore = movieData.querySelector(".card-movie")
-  // btnViewMore.forEach((movies) => {
-  //   movies.addEventListener("click", () => {
-  //     const movieId = movies.getAttribute("id");
-  //     navigateTo("/movieInfo", { id: movieId });
-  //     console.log(movieId);
-  //   });
-  // });
+  // -----------------Navigate-----------------//
+
+
+  const clickedMovie = data.forEach(movie => {
+    const movieId = movie.id; // Obtiene el ID de la película
+    console.log(movieId);
+    movieData.addEventListener('click', (movieId) => {
+      movieId.innerHTML = renderData(data);
+      console.log(movieId);
+      navigateTo('/movieInfo', {movieId});
+    })
+  });
+  // console.log(clickedMovie);
+  // navigateTo('/movieInfo', {});
+
+
   return viewEl;
 }
 
