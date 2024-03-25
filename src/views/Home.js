@@ -17,7 +17,8 @@ export function Home({ id }) {
   let datosOrdenados = [...data];  // contenedor de cartas (o elementos HTML) que se generarán dinámicamente.
   
   movieData.className = "cartasContainer";
-  movieData.innerHTML = renderData(data);
+  //movieData.innerHTML = renderData(data);
+  movieData.appendChild(renderData(data))
    //----------Uniendo todo ------------------------------------//
   viewEl.append(header(), filterElement, movieData, footer());
   const selectFilter = filterElement.querySelector('[data-testid="select-filter"]');
@@ -99,7 +100,8 @@ export function Home({ id }) {
     } else if (selectSort.value === 'desc') {
       datosOrdenados = ordenarNombresZA(datosOrdenados);
     }
-     movieData.innerHTML = renderData(datosOrdenados);
+     //movieData.innerHTML = renderData(datosOrdenados);
+     movieData.appendChild(renderData(data))
   });
 
   selectFilter.addEventListener('change', () => {
@@ -114,7 +116,8 @@ export function Home({ id }) {
       datosOrdenados = peliculasFiltradas;
 
     }
-    movieData.innerHTML = renderData(datosOrdenados);
+    //movieData.innerHTML = renderData(datosOrdenados);
+    movieData.appendChild(renderData(data))
   });
 
   btnPremioTotal.addEventListener('click', () => {
@@ -134,7 +137,8 @@ export function Home({ id }) {
     selectFilter.selectedIndex = 0;
     selectSort.selectedIndex = 0;
     //estadisticaPremios.selectedIndex = 0;
-    movieData.innerHTML = renderData(data);
+    //movieData.innerHTML = renderData(data);
+    movieData.appendChild(renderData(data))
   });
 
   btnClose.addEventListener('click', () => {
