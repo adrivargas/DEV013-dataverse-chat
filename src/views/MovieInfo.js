@@ -3,8 +3,15 @@ import { header} from '../components/header.js';
 import { footer} from '../components/footer.js';
 import { renderData } from '../components/RenderData.js';
 import { navigateTo } from '../router.js';
+
+export function MovieInfo({id}){
+    //console.log(id);
+    // entrar a la data y encontrar el id (filter, find)
+    const arrayFiltrado = data.filter(movie => movie.id == id );
+    console.log(arrayFiltrado);
+
 export function MovieInfo(props){
-    
+
     const container = document.createElement('div');
     container.id = "containerMovie";
     const icono = document.createElement('div');

@@ -1,5 +1,6 @@
 import dataset from "../data/dataset.js";
 import { header } from "../components/header.js";
+import {communicateWithOpenAI } from "../lib/openAIApi.js"
 
 
 export const chatIndividual = () =>{
@@ -37,10 +38,13 @@ inputUser.className = "inputuser"
 
 const inputmessage = document.createElement("textarea")
 
-inputUser.appendChild(inputmessage);
-mainPage.appendChild(inputUser);
-
+// inputUser.appendChild(inputmessage);
+// mainPage.appendChild(inputUser);
+mainPage.appendChild(inputmessage);
 const sendButton = document.createElement("button");
+sendButton.className = "sendbutton"
+sendButton.textContent = "Enviar"
+mainPage.appendChild(sendButton);
 
 // mainPage.setAttribute("class", "chatContainer");
 // inputMain.setAttribute("class", "inputmessage");
@@ -55,7 +59,15 @@ const sendButton = document.createElement("button");
 view.appendChild(header());
 view.appendChild(mainPage);
 view.appendChild(sendButton);
+sendButton.addEventListener("click", () =>{
+    const msg = inputmessage.value;
+    //console.log(msg);
+    //communicateWithOpenAI 
+})
 
 return view;
 
 };
+
+
+
