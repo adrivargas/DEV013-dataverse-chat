@@ -12,9 +12,10 @@ export function MovieInfo(props){
     btnHome.className = "btnHome";
     btnHome.addEventListener('click',()=>navigateTo("/home",{}));
     
-    
     const selectedMovie = props.id;
-    console.log(selectedMovie);
+    container.innerHTML=selectedMovie.props;
+    
+    console.log(container);
   
     const selectedMovieInfo = data.find(
       (movies) => movies.id === selectedMovie
