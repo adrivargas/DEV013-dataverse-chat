@@ -12,12 +12,12 @@ export const setRoutes = (routes) => {
   if (typeof routes !== 'object') {
     throw new Error('Routes must be an object');
   }
-  
+
   // Throw errors if routes doesn't define an /error route
   if (!routes.hasOwnProperty('/error')) {
     throw new Error('Routes must define an /error route');
   }
-  
+
   // assign ROUTES
   return ROUTES = routes;
 };
@@ -33,7 +33,7 @@ const queryStringToObject = (queryString) => {
   return objectparams;
 }
 
-const renderView = (pathname, props={}) => {
+const renderView = (pathname, props = {}) => {
   // clear the root element
   // find the correct view in ROUTES for the pathname
   // in case not found render the error view
@@ -47,9 +47,9 @@ const renderView = (pathname, props={}) => {
   } else {
     root.append(ROUTES["/error"]());
   }
-} 
+}
 
-export const navigateTo = (pathname, props={}) => {
+export const navigateTo = (pathname, props = {}) => {
   // update window history with pushState
   // render the view with the pathname and props
   //const viewPath = ROUTES[pathname];

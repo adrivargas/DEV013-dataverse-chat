@@ -2,7 +2,7 @@ import { getApiKey, setApiKey } from '../src/lib/apiKey.js';
 describe('getApiKey', () => {
   test('should return null if apiKey is not set', () => {
 
-    localStorage = {}; 
+    localStorage = {};
     const apiKey = getApiKey();
     expect(apiKey).toBeNull();
   });

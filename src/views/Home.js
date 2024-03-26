@@ -5,7 +5,7 @@ import { renderData } from '../components/RenderData.js';
 import { footer } from '../components/footer.js';
 import { Filters } from '../components/filters.js';
 import { navigateTo } from '../router.js';
-import { ordenarNombresAZ, ordenarNombresZA, generoMovies, calcularEstadisticasIngresosPorGenero,premiosGanadosTotal, promedioPremiosGanados } from '../lib/datafunction.js';
+import { ordenarNombresAZ, ordenarNombresZA, generoMovies, calcularEstadisticasIngresosPorGenero, premiosGanadosTotal, promedioPremiosGanados } from '../lib/datafunction.js';
 //renderdata en componente no en datafuction
 export function Home({ id }) {
   const foundView = data.find((item) => item.id === id);
@@ -15,15 +15,15 @@ export function Home({ id }) {
   filterElement.className = "Filtros";
   filterElement.appendChild(Filters());
   let datosOrdenados = [...data];  // contenedor de cartas (o elementos HTML) que se generarán dinámicamente.
-  
+
   movieData.className = "cartasContainer";
   //movieData.innerHTML = renderData(data);
   movieData.appendChild(renderData(data))
-   //----------Uniendo todo ------------------------------------//
+  //----------Uniendo todo ------------------------------------//
   viewEl.append(header(), filterElement, movieData, footer());
   const selectFilter = filterElement.querySelector('[data-testid="select-filter"]');
   const selectSort = filterElement.querySelector("#nombre");
-  
+
   //----------Botones--------------//
   const btnClear = viewEl.querySelector('[data-testid="button-clear"]')
   const btnPremiosGenero = filterElement.querySelector("#premiosPorGenero");
@@ -93,15 +93,15 @@ export function Home({ id }) {
 
 
   //---------------Listener--------------//
-  
+
   selectSort.addEventListener('change', () => {
-   if (selectSort.value === 'asc') {
-    datosOrdenados = ordenarNombresAZ(datosOrdenados);
+    if (selectSort.value === 'asc') {
+      datosOrdenados = ordenarNombresAZ(datosOrdenados);
     } else if (selectSort.value === 'desc') {
       datosOrdenados = ordenarNombresZA(datosOrdenados);
     }
-     //movieData.innerHTML = renderData(datosOrdenados);
-     movieData.appendChild(renderData(data))
+    //movieData.innerHTML = renderData(datosOrdenados);
+    movieData.appendChild(renderData(data))
   });
 
   selectFilter.addEventListener('change', () => {
@@ -145,7 +145,7 @@ export function Home({ id }) {
     const dialog = viewEl.querySelector("#statsPremios1");
     dialog.close();
   })
-  
+
   btnCloseT.addEventListener('click', () => {
     const dialog = viewEl.querySelector("#statsPremios2");
     dialog.close();
