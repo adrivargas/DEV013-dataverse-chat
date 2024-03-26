@@ -27,19 +27,19 @@ export const chatIndividual = (movie) => {
 
     const contenedorDeBurbujas = document.createElement("div")
     
-    // const burbujaChat = document.createElement("div") //donde el usuario escribe
-    // burbujaChat.className = "burbujachat"
-    // //burbujaChat.textContent = "probando"
+    const burbujaChat = document.createElement("div") //donde el usuario escribe
+    burbujaChat.className = "burbujachat"
+    burbujaChat.textContent = "probando"
 
 
-    // const burbujaMovie = document.createElement("div")
-    // burbujaMovie.className = "burbujamovie"
-    // mainPage.appendChild(burbujaMovie);
-    // mainPage.appendChild(burbujaChat);
+    const burbujaMovie = document.createElement("div")
+    burbujaMovie.className = "burbujamovie"
+    mainPage.appendChild(burbujaMovie);
+    mainPage.appendChild(burbujaChat);
 
 
-    const inputUser = document.createElement("div")
-    inputUser.className = "inputuser"
+    //const inputUser = document.createElement("div")
+    //inputUser.className = "inputuser"
 
     const inputmessage = document.createElement("textarea")
 

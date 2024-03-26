@@ -19,7 +19,6 @@ export function Home({ id }) {
   movieData.className = "cartasContainer";
 
   //movieData.innerHTML = renderData(data);
-  movieData.appendChild(renderData(data))
    //----------Uniendo todo ------------------------------------//
 
   movieData.innerHTML = renderData(data);
@@ -165,15 +164,23 @@ export function Home({ id }) {
   // -----------------Navigate-----------------//
 
 
-  const clickedMovie = data.forEach(movie => {
+ /*const clickedMovie = data.forEach(movie => {
     const movieId = movie.id; // Obtiene el ID de la película
     console.log(movieId);
     movieData.addEventListener('click', (movieId) => {
       movieId.innerHTML = renderData(data);
-      console.log(movieId);
-      navigateTo('/movieInfo', {movieId});
+      console.log(movie, movieId);
+      //navigateTo('/movieInfo', {movieId});
     })
-  });
+  });*/
+  const btnsView = movieData.querySelectorAll(".btnView");
+  btnsView.forEach((btn)=>{
+    btn.addEventListener("click", (event)=>{
+      //console.log('ok btn', event.target.id);
+      const id = event.target.id;
+      navigateTo("/movieInfo", {id})
+    })
+  })
   // console.log(clickedMovie);
   // navigateTo('/movieInfo', {});
 

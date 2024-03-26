@@ -19,33 +19,23 @@ export const renderData = (data) => {
     </dl>
     </li>
 
-    <div>
-    <button class= "prueba" value= ${movies.id}>
-    Ver mas
-    </button>
-    </div>
-    </ul>
-    `
-
-
-
-    <div><buttonView id= "btnView" >Ver Más</buttonView></div>
+    <div><buttonView class= "btnView" id= ${movies.id} >Ver Más</buttonView></div>
     </ul>`
 
   });
-  const caja = document.createElement("div")
-  caja.innerHTML = root;
+  // const caja = document.createElement("div")
+  // caja.innerHTML = root;
 
-  const arrayBtn = caja.querySelectorAll("button")
-  arrayBtn.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
+  // const arrayBtn = caja.querySelectorAll("button")
+  // arrayBtn.forEach((btn) => {
+  //   btn.addEventListener("click", (event) => {
 
-      //console.log(event.target.value);
-      navigateTo("/movieInfo", {id : event.target.value})
-    })
-  })
+  //     //console.log(event.target.value);
+  //     navigateTo("/movieInfo", {id : event.target.value})
+  //   })
+  // })
 
   // Retornar el contenedor actualiz
-  return caja;
+  return root;
 
 };

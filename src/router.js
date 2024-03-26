@@ -54,7 +54,7 @@ export const navigateTo = (pathname, props = {}) => {
   // render the view with the pathname and props
   //const viewPath = ROUTES[pathname];
   history.pushState({}, "", pathname);
-  console.log(window.history)
+  //console.log(window.history)
   renderView(pathname, props);
 }
 
