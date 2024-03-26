@@ -18,6 +18,7 @@ export const renderData = (data) => {
     </div>
     </dl>
     </li>
+
     <div>
     <button class= "prueba" value= ${movies.id}>
     Ver mas
@@ -26,6 +27,10 @@ export const renderData = (data) => {
     </ul>
     `
 
+
+
+    <div><buttonView id= "btnView" >Ver Más</buttonView></div>
+    </ul>`
 
   });
   const caja = document.createElement("div")

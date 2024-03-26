@@ -17,9 +17,15 @@ export function Home({ id }) {
   let datosOrdenados = [...data];  // contenedor de cartas (o elementos HTML) que se generarán dinámicamente.
 
   movieData.className = "cartasContainer";
+
   //movieData.innerHTML = renderData(data);
   movieData.appendChild(renderData(data))
+   //----------Uniendo todo ------------------------------------//
+
+  movieData.innerHTML = renderData(data);
+
   //----------Uniendo todo ------------------------------------//
+
   viewEl.append(header(), filterElement, movieData, footer());
   const selectFilter = filterElement.querySelector('[data-testid="select-filter"]');
   const selectSort = filterElement.querySelector("#nombre");
@@ -29,7 +35,9 @@ export function Home({ id }) {
   const btnPremiosGenero = filterElement.querySelector("#premiosPorGenero");
   const btnPremioTotal = filterElement.querySelector("#premiosTotal")
   const btnClose = filterElement.querySelector('#cerrarBoton1');
-  const btnCloseT = filterElement.querySelector('#cerrarBoton2')
+  const btnCloseT = filterElement.querySelector('#cerrarBoton2');
+
+
 
   //----------------Funciones--------------------//
   const imprimirEstadisticasPorGenero = (estadisticas) => {
@@ -100,8 +108,12 @@ export function Home({ id }) {
     } else if (selectSort.value === 'desc') {
       datosOrdenados = ordenarNombresZA(datosOrdenados);
     }
-    //movieData.innerHTML = renderData(datosOrdenados);
-    movieData.appendChild(renderData(data))
+
+     //movieData.innerHTML = renderData(datosOrdenados);
+     movieData.appendChild(renderData(data))
+
+    movieData.innerHTML = renderData(datosOrdenados);
+
   });
 
   selectFilter.addEventListener('change', () => {
@@ -150,15 +162,22 @@ export function Home({ id }) {
     const dialog = viewEl.querySelector("#statsPremios2");
     dialog.close();
   })
-  //-----------------Navigate-----------------//
-  // const btnViewMore = movieData.querySelector(".card-movie")
-  // btnViewMore.forEach((movies) => {
-  //   movies.addEventListener("click", () => {
-  //     const movieId = movies.getAttribute("id");
-  //     navigateTo("/movieInfo", { id: movieId });
-  //     console.log(movieId);
-  //   });
-  // });
+  // -----------------Navigate-----------------//
+
+
+  const clickedMovie = data.forEach(movie => {
+    const movieId = movie.id; // Obtiene el ID de la película
+    console.log(movieId);
+    movieData.addEventListener('click', (movieId) => {
+      movieId.innerHTML = renderData(data);
+      console.log(movieId);
+      navigateTo('/movieInfo', {movieId});
+    })
+  });
+  // console.log(clickedMovie);
+  // navigateTo('/movieInfo', {});
+
+
   return viewEl;
 }
 
