@@ -438,7 +438,16 @@ textarea {
 }
 
 
-
+.botonchateaconmigo{
+    width: 100px;
+    heigth: 100px;
+    border-radius: 50px; 
+    margin-left: 900px; 
+    margin-bottom: 20px;
+    color: white;
+    background-color: #9d61db 
+    
+}
 /* Media query for smaller screens */
 
 @media screen and (max-width: 1280px) {
