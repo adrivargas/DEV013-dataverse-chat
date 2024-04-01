@@ -1,8 +1,8 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
-import { Home } from './views/home.js';
+import { Home } from './views/Home.js';
 import { chatIndividual } from './views/chatIndividual.js';
-import {Error} from './views/Error.js';
-import {Bienvenida} from './views/Bienvenida.js';
+import { Error } from './views/Error.js';
+import { Bienvenida } from './views/Bienvenida.js';
 import { MovieInfo } from './views/MovieInfo.js';
 import { apiKeyRequest } from './views/ApiRequest.js';
 // ... import other views

@@ -237,21 +237,21 @@ select {
     margin-top: -700px;
     margin-left: 250px;
     margin: 0 auto;
-    color:rgb(205, 153, 12);
+    color: rgb(205, 153, 12);
     background-color: black;
 }
 
 button[data-testid="button-clear"] {
-    background-color:black;
+    background-color: black;
     width: 180px;
-    height:60px;
+    height: 60px;
     font-size: 30px;
     margin-top: -95px;
     margin-left: 600px;
     padding: 5px;
     border-radius: 20px;
     line-height: 25px;
-    color:rgb(205, 153, 12);
+    color: rgb(205, 153, 12);
 }
 
 .estadisticasTitle {
@@ -269,10 +269,11 @@ button[data-testid="button-clear"] {
     width: 350px;
     margin: 0 auto;
     margin-top: -700px;
-    color:rgb(205, 153, 12);
+    color: rgb(205, 153, 12);
     background-color: black;
 }
-#premiosTotal{
+
+#premiosTotal {
     font-size: 25px;
 }
 
@@ -293,7 +294,8 @@ button[data-testid="button-clear"] {
     line-height: 25px;
     margin-top: -700px;
 }
-.cerrarBoton1{
+
+.cerrarBoton1 {
     width: 180px;
     font-size: 20px;
     margin: 50px;
@@ -301,13 +303,14 @@ button[data-testid="button-clear"] {
     line-height: 25px;
 }
 
-.cerrarBoton2{
+.cerrarBoton2 {
     width: 180px;
     font-size: 20px;
     margin: 50px;
     border-radius: 10px;
     line-height: 25px;
 }
+
 .statsPremios1,
 .statsPremios2 {
     flex-wrap: wrap;
@@ -334,16 +337,18 @@ button[data-testid="button-clear"] {
     background: black;
     opacity: 50%;
 }
+
 /* chat individual */
 
-.mainchat{
+.mainchat {
     margin: 0 auto;
     width: 1000px;
     height: 900px;
     background-color: rgb(44, 38, 38);
     border-radius: 15px 15px 15px 15px;
 }
-.secondaryheader{
+
+.secondaryheader {
     margin: 0px;
     width: 1000px;
     height: 60px;
@@ -351,13 +356,13 @@ button[data-testid="button-clear"] {
     border-radius: 15px 15px 15px 15px;
 }
 
-.online{
+.online {
     font-size: 20px;
     margin-right: 80px;
     padding-top: 15px;
 }
 
-#icono{
+#icono {
     background-image: url(./images/play.png);
     background-size: 50px;
     border-radius: 50%;
@@ -365,15 +370,16 @@ button[data-testid="button-clear"] {
     height: 30px;
 }
 
-.burbujachat{
+.burbujachat {
     background-color: white;
     width: 500px;
     height: 50px;
-    margin-top: 50px; 
+    margin-top: 50px;
     border-radius: 15px 15px 15px 15px;
     margin-left: 400px;
 }
-.burbujamovie{
+
+.burbujamovie {
     background-color: white;
     width: 500px;
     height: 50px;
@@ -388,7 +394,7 @@ button[data-testid="button-clear"] {
     height: 50px;
     border-radius: 15px 15px 15px 15px;} */
 
-textarea{
+textarea {
     width: 900px;
     height: 50px;
     margin-top: 550px;
@@ -399,7 +405,7 @@ textarea{
     font-size: 25px;
 }
 
-.sendbutton{
+.sendbutton {
     width: 50px;
     height: 50px;
     margin-left: 500px;
