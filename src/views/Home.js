@@ -1,7 +1,7 @@
 //linkEl.addEventListener('click', () => navigateTo("/about", { name: "Xochitl" }))
 import data from '../data/dataset.js';
 import { header } from '../components/header.js';
-import { renderData } from '../components/RenderData.js';
+import { renderData } from '../components/renderData.js';
 import { footer } from '../components/footer.js';
 import { Filters } from '../components/filters.js';
 import { navigateTo } from '../router.js';
