@@ -1,6 +1,6 @@
 //import { example, anotherExample } from '../src/dataFunctions.js';
 
-import {data} from '../src/data/dataset.js';
+import { data } from '../src/data/dataset.js';
 import { ordenarNombresAZ, ordenarNombresZA, generoMovies, premiosGanadosTotal, promedioPremiosGanados, calcularEstadisticasIngresosPorGenero } from '../src/lib/dataFunctions.js';
 
 describe('ordenarNombresAZ', () => {
@@ -84,7 +84,7 @@ describe('premiosGanadosTotal', () => {
 
   it('Deberia sumar todos los premios ganados de los 24 objetos', () => {
     const sumatoria = premiosGanadosTotal(data);
-    expect (sumatoria).toBe(3);
+    expect(sumatoria).toBe(3);
   });
 });
 
@@ -93,13 +93,13 @@ describe('promedioPremiosGanados', () => {
     { facts: { premioGanado: 1 } },
     { facts: { premioGanado: 2 } },
   ];
-  
-  it('Deberia dar el promedio de la suma total entre los 24 objetos', () =>{
+
+  it('Deberia dar el promedio de la suma total entre los 24 objetos', () => {
     const sumatoria = premiosGanadosTotal(data);
     const datos = promedioPremiosGanados(data);
 
-    const promedio = data.length >0 ? sumatoria/data.length : 0;
-    expect (datos).toEqual(promedio);
+    const promedio = data.length > 0 ? sumatoria / data.length : 0;
+    expect(datos).toEqual(promedio);
   });
 });
 
