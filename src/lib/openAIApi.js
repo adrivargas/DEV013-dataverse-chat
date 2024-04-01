@@ -2,9 +2,9 @@
 import { getApiKey } from './apiKey.js';
 
 const receiveApi = getApiKey();
-export const communicateWithOpenAI = async(movie, input) => {
+export const communicateWithOpenAI = (movie, input) => {
   //Aquí es donde debes implementar la petición con fetch o axios//
-  const response = await fetch(`https://api.openai.com/v1/chat/completions`, {
+  const response =  fetch(`https://api.openai.com/v1/chat/completions`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -24,5 +24,6 @@ export const communicateWithOpenAI = async(movie, input) => {
       ],
     }),
   });
+  console.log(response)
   return response;
 };

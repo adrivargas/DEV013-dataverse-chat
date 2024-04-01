@@ -4,15 +4,18 @@ import { getApiKey } from '../lib/apiKey.js';
 import { setApiKey } from '../lib/apiKey.js';
 
 export const apiKeyRequest = (props) => {
+  console.log(props);
 
   const apiPassword = document.createElement("div");
   const apiPage = document.createElement("div");
   const passwordArea = document.createElement("textarea");
   console.log(passwordArea);
   const buttonEnterApi = document.createElement('button');
-  
-  
-  
+  const movie = props.id;
+  console.log(props);
+   
+  const movieN = data.find((movie)=> movie.name === movie)
+
 
   buttonEnterApi.className = "enterApi";
   buttonEnterApi.textContent = "Enter";
@@ -29,10 +32,11 @@ export const apiKeyRequest = (props) => {
   
   buttonEnterApi.addEventListener('click', () => {
     const passwordAreaValue = apiPassword.querySelector(".passwordArea").value;
+
     if (passwordAreaValue === llave) {
       console.log(llave, passwordAreaValue)
       setApiKey(passwordAreaValue)
-      navigateTo("/chat")
+      navigateTo("/chat",  )
     } else {
       return window.alert("Clave incorrecta, intente nuevamente");
       //console.log("error") // const error = "Ingrese nuevamente";

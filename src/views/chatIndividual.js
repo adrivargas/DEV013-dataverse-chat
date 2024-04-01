@@ -1,7 +1,7 @@
-import dataset from "../data/dataset.js";
+import data from '../data/dataset.js';
 import { header } from "../components/header.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js"
-//import { setApiKey } from "../lib/apiKey.js";
+import { setApiKey } from "../lib/apiKey.js";
 //import { getApiKey } from "../lib/apiKey.js";
 
 
@@ -14,22 +14,6 @@ export const chatIndividual = (movie) => {
   secondaryHeader.className = "secondaryheader"
   mainPage.appendChild(secondaryHeader);
   
-
-
-  const onlineMovie = document.createElement("p");
-  onlineMovie.className = "online"
-  secondaryHeader.appendChild(onlineMovie)
-  onlineMovie.textContent = "Online"
-
-  // const iconMovie = document.createElement("i");
-  // iconMovie.id = "icono";
-  // iconMovie.textContent= "Adriana"
-  // secondaryHeader.appendChild(iconMovie);
-
-  // const contenedorDeBurbujas = document.createElement("div")// un contenedor para los dos chats, de venida y de ida
-  // contenedorDeBurbujas.appendChild(burbujaChat);
-  // contenedorDeBurbujas.appendChild(burbujaMovie);
-
   const burbujaChat = document.createElement("div") //donde el usuario escribe
   burbujaChat.className = "burbujachat"
   burbujaChat.textContent = ""
@@ -41,14 +25,8 @@ export const chatIndividual = (movie) => {
   mainPage.appendChild(burbujaMovie);
   mainPage.appendChild(burbujaChat);
 
-
-  //const inputUser = document.createElement("div")
-  //inputUser.className = "inputuser"
-
-  const inputmessage = document.createElement("textarea") // la caja donde escribimos los mensajes
-
-  // inputUser.appendChild(inputmessage);
-  // mainPage.appendChild(inputUser);
+  const inputmessage = document.createElement("textarea"); // la caja donde escribimos los mensajes
+  inputmessage.id = "movieMsg";
   mainPage.appendChild(inputmessage);
   const sendButton = document.createElement("button");
   sendButton.className = "sendbutton"
@@ -57,18 +35,28 @@ export const chatIndividual = (movie) => {
 
 
 
-  sendButton.addEventListener("click", () => {
-    const msg = inputmessage.value;
-    communicateWithOpenAI(movie.name, msg) 
-      .then(response => {
-        console.log(view.innerHTML =` ${response}`)
+  // sendButton.addEventListener("click", () => {
+  //   const msg = inputmessage.value;
+  //   const apiKey = getApiKey();
+  // });
 
-      })
-      .catch(error => {
-        console.log(`"Error", ${error}`);
-      })
+  
+  const selectedMovieInfo = data.find((movies) => movies.id === movie);
+  const messageMovie = mainPage.querySelector('#movieMsg');
+  console.log(selectedMovieInfo);
 
-  }),
+  communicateWithOpenAI(selectedMovieInfo, messageMovie.value) 
+    .then((response) => response.json())
+    .then((data) =>{
+
+      //view.data.choices[0].message.content
+      console.log(data.choices[0].message.content)
+
+    })
+    .catch(error => {
+      console.log (error)
+    });
+
   // mainPage.setAttribute("class", "chatContainer");
   // inputMain.setAttribute("class", "inputmessage");
   // inputMain.setAttribute("placeholder", "Escriba aqui...");
@@ -89,3 +77,4 @@ export const chatIndividual = (movie) => {
 
 
 
+// Por revisar 
