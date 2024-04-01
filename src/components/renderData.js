@@ -3,8 +3,7 @@ import { navigateTo } from "../router.js";
 export const renderData = (data) => {
 
   let root = "";
-  data.forEach((movies) => {
-    root += `
+  root += `
     <ul>
     <li class="card-movie" itemscope itemtype="MovieCards">
     <dl>
@@ -18,21 +17,8 @@ export const renderData = (data) => {
     </div>
     </dl>
     </li>
-
-    <div>
-    <button class= "prueba" value= ${movies.id}>
-    Ver mas
-    </button>
-    </div>
-    </ul>
-    `
-
-
-
     <div><buttonView id= "btnView" >Ver Más</buttonView></div>
     </ul>`
-
-  });
   const caja = document.createElement("div")
   caja.innerHTML = root;
 
@@ -41,7 +27,7 @@ export const renderData = (data) => {
     btn.addEventListener("click", (event) => {
 
       //console.log(event.target.value);
-      navigateTo("/movieInfo", {id : event.target.value})
+      navigateTo("/movieInfo", { id: event.target.value })
     })
   })
 
