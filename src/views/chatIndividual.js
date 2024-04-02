@@ -37,34 +37,53 @@ export const chatIndividual = (movie) => {
 
   //--------------Listener---------------//
 
-  sendButton.addEventListener("click", () => {
-    const userMessage = inputmessage.value; // Obtener el mensaje del usuario
-    addChatBubble(burbujaChat, "user", userMessage); // Agregar la burbuja del usuario al contenedor de burbujas
-    communicateWithOpenAI(movie, userMessage)
-      .then(response=>{
-        console.log(response)
-        burbujaMovie.innerHTML = response.choices[0].message.content
-      })
-      .catch(error=>{
-        console.log(error)
-      })
-    // communicateWithOpenAI(movie.name, userMessage)
-    //   console.log (movie.name)
-      
+    sendButton.addEventListener("click", () => {
+        const userMessage = inputmessage.value; // Obtener el mensaje del usuario
+        addChatBubble(burbujaChat, "user", userMessage); // Agregar la burbuja del usuario al contenedor de burbujas
+    
+        communicateWithOpenAI(movie.name, userMessage)
+            .then(response => {
+                // Procesar la respuesta de la IA
+                const aiResponse = response.data; // Supongamos que la respuesta de la IA está en el campo 'data'
+                addChatBubble(burbujaChat, "ai", aiResponse); // Agregar la burbuja de chat con la respuesta de la IA
+            })
+            .catch(error => {
+                console.error("Error al comunicarse con OpenAI:", error);
+                // Manejar el error de manera adecuada (por ejemplo, mostrar un mensaje de error al usuario)
+            });
+    
+        // Limpiar el área de texto después de enviar el mensaje
+        inputmessage.value = "";
+    });
+    
+    function addChatBubble(container, role, message) {
+        const bubble = document.createElement("div");
+        bubble.className = `bubble ${role}`;
+        bubble.textContent = message;
+        container.appendChild(bubble);
+    }
+    
+>>>>>>>>> Temporary merge branch 2
 
-    // // Limpiar el área de texto después de enviar el mensaje
-    // inputmessage.value = "";
-  });
+  // mainPage.setAttribute("class", "chatContainer");
+  // inputMain.setAttribute("class", "inputmessage");
+  // inputMain.setAttribute("placeholder", "Escriba aqui...");
+  // inputMain.setAttribute("type", "text");
+  // inputMain.id = "chatpanel"
+  // sendButton.setAttribute("class", "sendmessage")
+  // sendButton.id = "sendbutton"
+  // sendButton.textContent = "Send";
 
-  function addChatBubble(container, role, message) {
-    const bubble = document.createElement("div");
-    bubble.className = `bubble ${role}`;
-    bubble.textContent = message;
-    container.appendChild(bubble);
-  }
+<<<<<<<<< Temporary merge branch 1
 
-  
+  view.appendChild(header());
+  view.appendChild(mainPage);
+  view.appendChild(sendButton);
+
 
   return view;
 
+// Por revisar 
+=========
 };
+>>>>>>>>> Temporary merge branch 2
