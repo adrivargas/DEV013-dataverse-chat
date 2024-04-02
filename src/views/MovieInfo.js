@@ -39,7 +39,7 @@ export function MovieInfo(props) {
   }
 
   botonChatearConMovies.addEventListener('click', () => {
-    navigateTo("/apirequest", {selectedMovieInfo})
+    navigateTo("/apirequest", selectedMovieInfo)
   })
   movieIn.appendChild(botonChatearConMovies);
   container.append(header(), btnHome, movieIn, footer());

@@ -6,72 +6,70 @@ import { getApiKey } from "../lib/apiKey.js";
 
 
 export const chatIndividual = (movie) => {
-    console.log(movie);
+
+    //Creo todas las constantes a usar//
     const view = document.createElement("div");
     const mainPage = document.createElement("article");
-    mainPage.className = "mainchat"
     const secondaryHeader = document.createElement("div")
-    secondaryHeader.className = "secondaryheader"
-    mainPage.appendChild(secondaryHeader);
-
-
     const onlineMovie = document.createElement("p");
-    onlineMovie.className = "online"
-    secondaryHeader.appendChild(onlineMovie)
-    onlineMovie.textContent = "Online"
-
-    // const iconMovie = document.createElement("i");
-    // iconMovie.id = "icono";
-    // iconMovie.textContent= "Adriana"
-    // secondaryHeader.appendChild(iconMovie);
-
     const contenedorDeBurbujas = document.createElement("div")
-    
     const burbujaChat = document.createElement("div") //donde el usuario escribe
-    burbujaChat.className = "burbujachat"
-    burbujaChat.textContent = "probando"
-
-
     const burbujaMovie = document.createElement("div")
+    const inputmessage = document.createElement("textarea")
+    const sendButton = document.createElement("button");
+
+    // Añado mis clases
+    mainPage.className = "mainchat"
+    secondaryHeader.className = "secondaryheader"
+    onlineMovie.className = "online"
+    burbujaChat.className = "burbujachat"
     burbujaMovie.className = "burbujamovie"
+    sendButton.className = "sendbutton"
+
+    // Añado mis append y appendChild
+   
+    mainPage.appendChild(secondaryHeader);
+    secondaryHeader.appendChild(onlineMovie)
     mainPage.appendChild(burbujaMovie);
     mainPage.appendChild(burbujaChat);
-
-
-    //const inputUser = document.createElement("div")
-    //inputUser.className = "inputuser"
-
-    const inputmessage = document.createElement("textarea")
-
-    // inputUser.appendChild(inputmessage);
-    // mainPage.appendChild(inputUser);
     mainPage.appendChild(inputmessage);
-    const sendButton = document.createElement("button");
-    sendButton.className = "sendbutton"
-    sendButton.textContent = "Enviar"
     mainPage.appendChild(sendButton);
-
-    // mainPage.setAttribute("class", "chatContainer");
-    // inputMain.setAttribute("class", "inputmessage");
-    // inputMain.setAttribute("placeholder", "Escriba aqui...");
-    // inputMain.setAttribute("type", "text");
-    // inputMain.id = "chatpanel"
-    // sendButton.setAttribute("class", "sendmessage")
-    // sendButton.id = "sendbutton"
-    // sendButton.textContent = "Send";
-
-
     view.appendChild(header());
     view.appendChild(mainPage);
     view.appendChild(sendButton);
 
+    //Mis textContent
+    onlineMovie.textContent = "Online"
+    sendButton.textContent = "Enviar"
+    
+    //--------------Listener---------------//
+
     sendButton.addEventListener("click", () => {
-        communicateWithOpenAI(movie.name, inputmessage.value)
-        console.log(movie.name);
-        const msg = inputmessage.value;
-        console.log(msg);
-        //communicateWithOpenAI 
-    })
+        const userMessage = inputmessage.value; // Obtener el mensaje del usuario
+        addChatBubble(burbujaChat, "user", userMessage); // Agregar la burbuja del usuario al contenedor de burbujas
+    
+        communicateWithOpenAI(movie.name, userMessage)
+            .then(response => {
+                // Procesar la respuesta de la IA
+                const aiResponse = response.data; // Supongamos que la respuesta de la IA está en el campo 'data'
+                addChatBubble(burbujaChat, "ai", aiResponse); // Agregar la burbuja de chat con la respuesta de la IA
+            })
+            .catch(error => {
+                console.error("Error al comunicarse con OpenAI:", error);
+                // Manejar el error de manera adecuada (por ejemplo, mostrar un mensaje de error al usuario)
+            });
+    
+        // Limpiar el área de texto después de enviar el mensaje
+        inputmessage.value = "";
+    });
+    
+    function addChatBubble(container, role, message) {
+        const bubble = document.createElement("div");
+        bubble.className = `bubble ${role}`;
+        bubble.textContent = message;
+        container.appendChild(bubble);
+    }
+    
 
     return view;
 
