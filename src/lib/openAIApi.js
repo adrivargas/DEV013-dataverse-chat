@@ -3,8 +3,9 @@ import { getApiKey } from './apiKey.js';
 
 const receiveApi = getApiKey();
 export const communicateWithOpenAI = (movie, input) => {
-  //Aquí es donde debes implementar la petición con fetch o axios//
-  const response =  fetch(`https://api.openai.com/v1/chat/completions`, {
+  console.log(movie);
+  //  //Aquí es donde debes implementar la petición con fetch o axios
+  const response =  fetch('https://api.openai.com/v1/chat/completions', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,8 +24,19 @@ export const communicateWithOpenAI = (movie, input) => {
         },
       ],
     }),
-  });
-  console.log(response)
+  })
+
+    .then((response) => {
+      return response.json()
+    })
+    .then((data) => {
+      console.log(data.choices[0].message.content)
+      return data;
+    })
+    .catch(error => {
+      console.error("Error al comunicarse con OpenAI:", error);
+      // Manejar el error de manera adecuada (por ejemplo, mostrar un mensaje de error al usuario)
+    });
+  
   return response;
 };
-

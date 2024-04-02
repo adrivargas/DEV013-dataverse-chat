@@ -11,11 +11,9 @@ export const apiKeyRequest = (props) => {
   const passwordArea = document.createElement("textarea");
   console.log(passwordArea);
   const buttonEnterApi = document.createElement('button');
-  const movie = props.id;
+  const movie = props.name;
   console.log(props);
    
-  const movieN = data.find((movie)=> movie.name === movie)
-
 
   buttonEnterApi.className = "enterApi";
   buttonEnterApi.textContent = "Enter";
@@ -26,22 +24,17 @@ export const apiKeyRequest = (props) => {
   apiPassword.appendChild(passwordArea);
   apiPassword.appendChild(buttonEnterApi);
   
-
-  const llave = "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";
- 
+  
+  const llave = getApiKey();
   
   buttonEnterApi.addEventListener('click', () => {
-    const passwordAreaValue = apiPassword.querySelector(".passwordArea").value;
-
-    if (passwordAreaValue === llave) {
-      console.log(llave, passwordAreaValue)
-      setApiKey(passwordAreaValue)
-      navigateTo("/chat",  )
+    setApiKey(passwordArea.value)
+    if (llave) {
+      navigateTo("/chat", {movie})
     } else {
-      return window.alert("Clave incorrecta, intente nuevamente");
-      //console.log("error") // const error = "Ingrese nuevamente";
-    }    
-    
+      return window.alert("Clave incorrecta, intente nuevamente")
+    }
+    console.log(llave)
 
   });
 

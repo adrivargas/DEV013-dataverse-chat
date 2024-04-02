@@ -6,37 +6,36 @@ import { setApiKey } from "../lib/apiKey.js";
 
 
 export const chatIndividual = (movie) => {
+ console.log(movie)
+  //Creo todas las constantes a usar//
+  const view = document.createElement("div");
+  const mainPage = document.createElement("article");
+  const secondaryHeader = document.createElement("div")
+  const onlineMovie = document.createElement("p");
+  const contenedorDeBurbujas = document.createElement("div")
+  const burbujaChat = document.createElement("div") //donde el usuario escribe
+  const burbujaMovie = document.createElement("div")
+  const inputmessage = document.createElement("textarea")
+  const sendButton = document.createElement("button");
 
+  // Añado mis clases
+  mainPage.className = "mainchat"
+  secondaryHeader.className = "secondaryheader"
+  onlineMovie.className = "online"
+  burbujaChat.className = "burbujachat"
+  burbujaMovie.className = "burbujamovie"
+  sendButton.className = "sendbutton"
+  inputmessage.id = "movieMsg";
+  // Añado mis append y appendChild
+  secondaryHeader.appendChild(onlineMovie);
+  mainPage.append(secondaryHeader, burbujaMovie, burbujaChat, inputmessage, sendButton);
+  view.append(header(), mainPage);
 
-    //Creo todas las constantes a usar//
-    const view = document.createElement("div");
-    const mainPage = document.createElement("article");
-    const secondaryHeader = document.createElement("div")
-    const onlineMovie = document.createElement("p");
-    const contenedorDeBurbujas = document.createElement("div")
-    const burbujaChat = document.createElement("div") //donde el usuario escribe
-    const burbujaMovie = document.createElement("div")
-    const inputmessage = document.createElement("textarea")
-    const sendButton = document.createElement("button");
+  //Mis textContent
+  onlineMovie.textContent = "Online"
+  sendButton.textContent = "Enviar"
 
-    // Añado mis clases
-    mainPage.className = "mainchat"
-    secondaryHeader.className = "secondaryheader"
-    onlineMovie.className = "online"
-    burbujaChat.className = "burbujachat"
-    burbujaMovie.className = "burbujamovie"
-    sendButton.className = "sendbutton"
-
-    // Añado mis append y appendChild
-    secondaryHeader.appendChild(onlineMovie);
-    mainPage.append(secondaryHeader,burbujaMovie,burbujaChat,inputmessage,sendButton);
-    view.append(header(), mainPage);
-
-    //Mis textContent
-    onlineMovie.textContent = "Online"
-    sendButton.textContent = "Enviar"
-    
-    //--------------Listener---------------//
+  //--------------Listener---------------//
 
     sendButton.addEventListener("click", () => {
         const userMessage = inputmessage.value; // Obtener el mensaje del usuario
@@ -64,15 +63,27 @@ export const chatIndividual = (movie) => {
         container.appendChild(bubble);
     }
     
+>>>>>>>>> Temporary merge branch 2
 
+  // mainPage.setAttribute("class", "chatContainer");
+  // inputMain.setAttribute("class", "inputmessage");
+  // inputMain.setAttribute("placeholder", "Escriba aqui...");
+  // inputMain.setAttribute("type", "text");
+  // inputMain.id = "chatpanel"
+  // sendButton.setAttribute("class", "sendmessage")
+  // sendButton.id = "sendbutton"
+  // sendButton.textContent = "Send";
+
+<<<<<<<<< Temporary merge branch 1
+
+  view.appendChild(header());
+  view.appendChild(mainPage);
+  view.appendChild(sendButton);
 
 
   return view;
-}
-
-
 
 // Por revisar 
-
+=========
 };
-
+>>>>>>>>> Temporary merge branch 2
