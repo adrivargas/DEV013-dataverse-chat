@@ -47,16 +47,21 @@ const renderView = (pathname, props = {}) => {
   } else {
     root.append(ROUTES["/error"]());
   }
+  
 }
 
 export const navigateTo = (pathname, props = {}) => {
-  // update window history with pushState
-  // render the view with the pathname and props
-  //const viewPath = ROUTES[pathname];
-  history.pushState({}, "", pathname);
-  //console.log(window.history)
+  // Convertir props a cadena de consulta (query string)
+  const queryString = Object.keys(props).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(props[key])}`).join('&');
+  
+  // Concatenar la cadena de consulta a la URL
+  const url = `${pathname}?${queryString}`;
+  
+  // Actualizar el historial del navegador y renderizar la vista
+  history.pushState({}, "", url);
   renderView(pathname, props);
 }
+
 
 export const onURLChange = (location) => {
   // parse the location for the pathname and search params

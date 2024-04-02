@@ -1,5 +1,5 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
-import { Home } from './views/Home.js';
+import { Home } from './views/home.js';
 import { chatIndividual } from './views/chatIndividual.js';
 import { Error } from './views/Error.js';
 import { Bienvenida } from './views/Bienvenida.js';
@@ -25,22 +25,24 @@ const routes = {
 };
 
 // Assign the routes
-setRoutes(routes);
 const root = document.getElementById("root");
+setRoutes(routes);
+setRootEl(root);
+
 document.addEventListener("DOMContentLoaded", (e) => {
-  setRootEl(root);
-  return root;
+  onURLChange(e.target.location);
 });
 
 
 
 // Set the root element where views will be rendered
 // Handle initial URL load
-window.addEventListener("DOMContentLoaded", (e) => {
-  setRootEl(root);
-  onURLChange(e.currentTarget.location);
-});
 
+window.addEventListener('popstate', () => {
+  // Llama a la función onURLChange con la ubicación actual
+  
+  onURLChange(window.location);
+});
 
 
 

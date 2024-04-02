@@ -23,19 +23,6 @@ export const renderData = (data) => {
     </ul>`
 
   });
-  // const caja = document.createElement("div")
-  // caja.innerHTML = root;
-
-  // const arrayBtn = caja.querySelectorAll("button")
-  // arrayBtn.forEach((btn) => {
-  //   btn.addEventListener("click", (event) => {
-
-  //     //console.log(event.target.value);
-  //     navigateTo("/movieInfo", {id : event.target.value})
-  //   })
-  // })
-
-  // Retornar el contenedor actualiz
   return root;
 
 };

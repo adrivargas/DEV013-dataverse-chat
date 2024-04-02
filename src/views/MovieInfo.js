@@ -8,42 +8,40 @@ export function MovieInfo(props) {
 
   const container = document.createElement('div');
   container.id = "containerMovie";
-  //const icono = document.createElement('div');
+  const movieIn = document.createElement('div');
+  const icono = document.createElement('div');
   const btnHome = document.createElement('button');
+  console.log(name);
   btnHome.className = "btnHome";
   btnHome.addEventListener('click', () => navigateTo("/home", {}));
   const botonChatearConMovies = document.createElement('button');
   botonChatearConMovies.textContent = "Chatea conmigo";
-  botonChatearConMovies.className = "botonchateaconmigo"
-  
 
   const selectedMovie = props.id;
   //container.innerHTML=
-  
 
   const selectedMovieInfo = data.find(
     (movies) => movies.id === selectedMovie
   );
 
-  
-  console.log(selectedMovieInfo);
   if (selectedMovieInfo) {
     const prueba = []
     prueba.push(selectedMovieInfo)
     console.log(prueba);
-    //const longCard = renderData(prueba);
+    const longCard = renderData(prueba);
     //container.appendChild(longCard);
-    container.innerHTML = renderData(prueba)
+    movieIn.innerHTML = renderData(prueba)
   } else {
     // Mensaje cuando no se encuentra la tarjeta
     const errorMessage = document.createElement("p");
     errorMessage.textContent = "Tarjeta no encontrada";
-    container.appendChild(errorMessage);
+    movieIn.appendChild(errorMessage);
   }
-  botonChatearConMovies.addEventListener('click', () => { 
-    console.log(selectedMovieInfo); 
-    console.log(selectedMovie); 
-    navigateTo ('/apirequest',{selectedMovieInfo})});
-  container.append(header(), btnHome, selectedMovieInfo, botonChatearConMovies, footer());
+
+  botonChatearConMovies.addEventListener('click', () => {
+    navigateTo("/apirequest", selectedMovieInfo)
+  })
+  movieIn.appendChild(botonChatearConMovies);
+  container.append(header(), btnHome, movieIn, footer());
   return container;
 }

@@ -6,75 +6,65 @@ import { setApiKey } from "../lib/apiKey.js";
 
 
 export const chatIndividual = (movie) => {
-  console.log(movie);
+ console.log(movie)
+  //Creo todas las constantes a usar//
   const view = document.createElement("div");
   const mainPage = document.createElement("article");
-  mainPage.className = "mainchat"
   const secondaryHeader = document.createElement("div")
-  secondaryHeader.className = "secondaryheader"
-  mainPage.appendChild(secondaryHeader);
-  
+  const onlineMovie = document.createElement("p");
+  const contenedorDeBurbujas = document.createElement("div")
   const burbujaChat = document.createElement("div") //donde el usuario escribe
-  burbujaChat.className = "burbujachat"
-  burbujaChat.textContent = ""
-
-
-  const burbujaMovie = document.createElement("div")// donde la pelicula escribe
-  burbujaMovie.className = "burbujamovie"
-  // mainPage.appendChild(contenedorDeBurbujas); // ahora si todos los chats estan dentro de un contenedor y este del main page
-  mainPage.appendChild(burbujaMovie);
-  mainPage.appendChild(burbujaChat);
-
-  const inputmessage = document.createElement("textarea"); // la caja donde escribimos los mensajes
-  inputmessage.id = "movieMsg";
-  mainPage.appendChild(inputmessage);
+  const burbujaMovie = document.createElement("div")
+  const inputmessage = document.createElement("textarea")
   const sendButton = document.createElement("button");
+
+  // Añado mis clases
+  mainPage.className = "mainchat"
+  secondaryHeader.className = "secondaryheader"
+  onlineMovie.className = "online"
+  burbujaChat.className = "burbujachat"
+  burbujaMovie.className = "burbujamovie"
   sendButton.className = "sendbutton"
+  inputmessage.id = "movieMsg";
+  // Añado mis append y appendChild
+  secondaryHeader.appendChild(onlineMovie);
+  mainPage.append(secondaryHeader, burbujaMovie, burbujaChat, inputmessage, sendButton);
+  view.append(header(), mainPage);
+
+  //Mis textContent
+  onlineMovie.textContent = "Online"
   sendButton.textContent = "Enviar"
-  mainPage.appendChild(sendButton);
 
+  //--------------Listener---------------//
 
+  sendButton.addEventListener("click", () => {
+    const userMessage = inputmessage.value; // Obtener el mensaje del usuario
+    addChatBubble(burbujaChat, "user", userMessage); // Agregar la burbuja del usuario al contenedor de burbujas
+    communicateWithOpenAI(movie, userMessage)
+      .then(response=>{
+        console.log(response)
+        burbujaMovie.innerHTML = response.choices[0].message.content
+      })
+      .catch(error=>{
+        console.log(error)
+      })
+    // communicateWithOpenAI(movie.name, userMessage)
+    //   console.log (movie.name)
+      
 
-  // sendButton.addEventListener("click", () => {
-  //   const msg = inputmessage.value;
-  //   const apiKey = getApiKey();
-  // });
+    // // Limpiar el área de texto después de enviar el mensaje
+    // inputmessage.value = "";
+  });
+
+  function addChatBubble(container, role, message) {
+    const bubble = document.createElement("div");
+    bubble.className = `bubble ${role}`;
+    bubble.textContent = message;
+    container.appendChild(bubble);
+  }
 
   
-  const selectedMovieInfo = data.find((movies) => movies.id === movie);
-  const messageMovie = mainPage.querySelector('#movieMsg');
-  console.log(selectedMovieInfo);
-
-  communicateWithOpenAI(selectedMovieInfo, messageMovie.value) 
-    .then((response) => response.json())
-    .then((data) =>{
-
-      //view.data.choices[0].message.content
-      console.log(data.choices[0].message.content)
-
-    })
-    .catch(error => {
-      console.log (error)
-    });
-
-  // mainPage.setAttribute("class", "chatContainer");
-  // inputMain.setAttribute("class", "inputmessage");
-  // inputMain.setAttribute("placeholder", "Escriba aqui...");
-  // inputMain.setAttribute("type", "text");
-  // inputMain.id = "chatpanel"
-  // sendButton.setAttribute("class", "sendmessage")
-  // sendButton.id = "sendbutton"
-  // sendButton.textContent = "Send";
-
-
-  view.appendChild(header());
-  view.appendChild(mainPage);
-  view.appendChild(sendButton);
-
 
   return view;
-}
 
-
-
-// Por revisar 
+};
