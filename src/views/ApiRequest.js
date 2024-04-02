@@ -4,13 +4,19 @@ import { getApiKey } from '../lib/apiKey.js';
 import { setApiKey } from '../lib/apiKey.js';
 
 export const apiKeyRequest = (props) => {
+  console.log(props);
 
   const apiPassword = document.createElement("div");
   const apiPage = document.createElement("div");
   const passwordArea = document.createElement("textarea");
   console.log(passwordArea);
   const buttonEnterApi = document.createElement('button');
-  
+  const movie = props.id;
+  console.log(props);
+   
+  const movieN = data.find((movie)=> movie.name === movie)
+
+
   buttonEnterApi.className = "enterApi";
   buttonEnterApi.textContent = "Enter";
   passwordArea.className = "passwordArea"
@@ -19,14 +25,25 @@ export const apiKeyRequest = (props) => {
   apiPassword.appendChild(apiPage);
   apiPassword.appendChild(passwordArea);
   apiPassword.appendChild(buttonEnterApi);
+  
 
+  const llave = "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";
+ 
+  
   buttonEnterApi.addEventListener('click', () => {
     const passwordAreaValue = apiPassword.querySelector(".passwordArea").value;
-    console.log("el valor de la contraseña",passwordAreaValue); 
-  
-    setApiKey(passwordAreaValue)
+
+    if (passwordAreaValue === llave) {
+      console.log(llave, passwordAreaValue)
+      setApiKey(passwordAreaValue)
+      navigateTo("/chat",  )
+    } else {
+      return window.alert("Clave incorrecta, intente nuevamente");
+      //console.log("error") // const error = "Ingrese nuevamente";
+    }    
     
-    navigateTo("/chat")});
+
+  });
 
   apiPage.innerHTML = `     
       <p class="messageApi">

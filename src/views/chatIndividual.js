@@ -1,11 +1,12 @@
-import dataset from "../data/dataset.js";
+import data from '../data/dataset.js';
 import { header } from "../components/header.js";
 import { communicateWithOpenAI } from "../lib/openAIApi.js"
 import { setApiKey } from "../lib/apiKey.js";
-import { getApiKey } from "../lib/apiKey.js";
+//import { getApiKey } from "../lib/apiKey.js";
 
 
 export const chatIndividual = (movie) => {
+
 
     //Creo todas las constantes a usar//
     const view = document.createElement("div");
@@ -64,6 +65,14 @@ export const chatIndividual = (movie) => {
     }
     
 
-    return view;
+
+
+  return view;
+}
+
+
+
+// Por revisar 
 
 };
+

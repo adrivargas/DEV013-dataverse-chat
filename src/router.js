@@ -29,7 +29,7 @@ const queryStringToObject = (queryString) => {
   // return the object
   const params = new URLSearchParams(queryString);
   const objectparams = Object.fromEntries(params); //convertimos a objeto
-  console.log(objectparams);
+  //console.log(objectparams);
   return objectparams;
 }
 

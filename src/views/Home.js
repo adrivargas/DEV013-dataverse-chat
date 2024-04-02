@@ -19,7 +19,7 @@ export function Home({ id }) {
   movieData.className = "cartasContainer";
 
   //movieData.innerHTML = renderData(data);
-   //----------Uniendo todo ------------------------------------//
+  //----------Uniendo todo ------------------------------------//
 
   movieData.innerHTML = renderData(data);
 
@@ -108,8 +108,8 @@ export function Home({ id }) {
       datosOrdenados = ordenarNombresZA(datosOrdenados);
     }
 
-     //movieData.innerHTML = renderData(datosOrdenados);
-     movieData.appendChild(renderData(data))
+    //movieData.innerHTML = renderData(datosOrdenados);
+    movieData.appendChild(renderData(data))
 
     movieData.innerHTML = renderData(datosOrdenados);
 
@@ -164,7 +164,7 @@ export function Home({ id }) {
   // -----------------Navigate-----------------//
 
 
- /*const clickedMovie = data.forEach(movie => {
+  /*const clickedMovie = data.forEach(movie => {
     const movieId = movie.id; // Obtiene el ID de la película
     console.log(movieId);
     movieData.addEventListener('click', (movieId) => {
