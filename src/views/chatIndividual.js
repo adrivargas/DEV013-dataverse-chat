@@ -27,16 +27,9 @@ export const chatIndividual = (movie) => {
     sendButton.className = "sendbutton"
 
     // Añado mis append y appendChild
-   
-    mainPage.appendChild(secondaryHeader);
-    secondaryHeader.appendChild(onlineMovie)
-    mainPage.appendChild(burbujaMovie);
-    mainPage.appendChild(burbujaChat);
-    mainPage.appendChild(inputmessage);
-    mainPage.appendChild(sendButton);
-    view.appendChild(header());
-    view.appendChild(mainPage);
-    view.appendChild(sendButton);
+    secondaryHeader.appendChild(onlineMovie);
+    mainPage.append(secondaryHeader,burbujaMovie,burbujaChat,inputmessage,sendButton);
+    view.append(header(), mainPage);
 
     //Mis textContent
     onlineMovie.textContent = "Online"
