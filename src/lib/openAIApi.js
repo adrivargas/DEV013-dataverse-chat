@@ -27,3 +27,4 @@ export const communicateWithOpenAI = (movie, input) => {
   console.log(response)
   return response;
 };
+
