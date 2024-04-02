@@ -69,13 +69,10 @@ export const chatIndividual = (movie) => {
         communicateWithOpenAI(movie.name, inputmessage.value)
         console.log(movie.name);
         const msg = inputmessage.value;
-        //console.log(msg);
+        console.log(msg);
         //communicateWithOpenAI 
     })
 
     return view;
 
 };
-
-
-
