@@ -6,7 +6,7 @@ import { footer } from '../components/footer.js';
 import { Filters } from '../components/filters.js';
 import { navigateTo } from '../router.js';
 import { ordenarNombresAZ, ordenarNombresZA, generoMovies, calcularEstadisticasIngresosPorGenero, premiosGanadosTotal, promedioPremiosGanados } from '../lib/datafunction.js';
-//renderdata en componente no en datafuction
+
 export function Home({ id }) {
   const foundView = data.find((item) => item.id === id);
   const viewEl = document.createElement('div');
@@ -109,7 +109,7 @@ export function Home({ id }) {
     }
 
     //movieData.innerHTML = renderData(datosOrdenados);
-    movieData.appendChild(renderData(data))
+    // movieData.appendChild(renderData(data))
 
     movieData.innerHTML = renderData(datosOrdenados);
 
@@ -127,8 +127,8 @@ export function Home({ id }) {
       datosOrdenados = peliculasFiltradas;
 
     }
-    //movieData.innerHTML = renderData(datosOrdenados);
-    movieData.appendChild(renderData(data))
+    movieData.innerHTML = renderData(datosOrdenados);
+    //movieData.appendChild(renderData(data))
   });
 
   btnPremioTotal.addEventListener('click', () => {
@@ -148,8 +148,8 @@ export function Home({ id }) {
     selectFilter.selectedIndex = 0;
     selectSort.selectedIndex = 0;
     //estadisticaPremios.selectedIndex = 0;
-    //movieData.innerHTML = renderData(data);
-    movieData.appendChild(renderData(data))
+    movieData.innerHTML = renderData(data);
+   // movieData.appendChild(renderData(data))
   });
 
   btnClose.addEventListener('click', () => {
@@ -163,16 +163,6 @@ export function Home({ id }) {
   })
   // -----------------Navigate-----------------//
 
-
-  /*const clickedMovie = data.forEach(movie => {
-    const movieId = movie.id; // Obtiene el ID de la película
-    console.log(movieId);
-    movieData.addEventListener('click', (movieId) => {
-      movieId.innerHTML = renderData(data);
-      console.log(movie, movieId);
-      //navigateTo('/movieInfo', {movieId});
-    })
-  });*/
   const btnsView = movieData.querySelectorAll(".btnView");
   btnsView.forEach((btn)=>{
     btn.addEventListener("click", (event)=>{
@@ -181,10 +171,6 @@ export function Home({ id }) {
       navigateTo("/movieInfo", {id})
     })
   })
-  // console.log(clickedMovie);
-  // navigateTo('/movieInfo', {});
-
-
   return viewEl;
 }
 

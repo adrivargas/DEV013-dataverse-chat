@@ -4,21 +4,19 @@ import { footer } from '../components/footer.js';
 import { renderData } from '../components/renderData.js';
 import { navigateTo } from '../router.js';
 export function MovieInfo(props) {
-  // console.log(props);// 1-24
-
+ 
   const container = document.createElement('div');
   container.id = "containerMovie";
   const movieIn = document.createElement('div');
   const icono = document.createElement('div');
   const btnHome = document.createElement('button');
-  console.log(name);
   btnHome.className = "btnHome";
   btnHome.addEventListener('click', () => navigateTo("/home", {}));
   const botonChatearConMovies = document.createElement('button');
+  botonChatearConMovies.className = "botonchateaconmigo";
   botonChatearConMovies.textContent = "Chatea conmigo";
 
   const selectedMovie = props.id;
-  //container.innerHTML=
 
   const selectedMovieInfo = data.find(
     (movies) => movies.id === selectedMovie
