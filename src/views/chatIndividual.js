@@ -33,7 +33,7 @@ export const chatIndividual = (movie) => {
     // Añado mis append y appendChild
     secondaryHeader.appendChild(onlineMovie);
     mainPage.appendChild(secondaryHeader);
-    mainPage.appendChild(containerbubble)
+    mainPage.appendChild(containerbubble);
     mainPage.append(inputmessage, sendButton);
     view.append(header(), btnHome,mainPage);
     //Mis textContent
@@ -74,7 +74,9 @@ export const chatIndividual = (movie) => {
         width: 100%;
         height: 50%;
         margin-top: 50px;
-        border-radius: 15px 15px 15px 15px;`
+        border-radius: 15px 15px 15px 15px;
+        font-family: sans-serif;
+        font-size: 22px;`
         return bubble;
     }
 
