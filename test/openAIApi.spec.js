@@ -1,7 +1,6 @@
-// Importa la función que deseas probar
 import { communicateWithOpenAI } from './ruta/de/tu/archivo.js';
 
-// Mock de la función getApiKey para evitar llamadas reales a la API en tus pruebas
+// Mock de la función getApiKey para evitar llamadas reales a la API 
 jest.mock('./ruta/de/tu/apiKey.js', () => ({
   getApiKey: jest.fn(() => 'mockedApiKey')
 }));
@@ -12,7 +11,7 @@ describe('communicateWithOpenAI', () => {
     const movie = { props: { name: 'Nombre de la película' } };
     const input = 'Mensaje de prueba';
 
-    // Llamar a la función que deseas probar
+    // Llama a la función 
     await communicateWithOpenAI(movie, input);
 
     // Verificar si fetch fue llamado con los parámetros correctos
@@ -38,5 +37,4 @@ describe('communicateWithOpenAI', () => {
     });
   });
 
-  // Aquí podrías agregar más tests para otros escenarios, como manejo de errores, etc.
 });
