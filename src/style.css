@@ -357,7 +357,7 @@ button[data-testid="button-clear"] {
 }
 
 .online {
-    font-size: 20px;
+    font-size: 33px;
     margin-right: 80px;
     padding-top: 15px;
 }
@@ -370,37 +370,35 @@ button[data-testid="button-clear"] {
     height: 30px;
 }
 
-section {
-    scroll-behavior: smooth;
-}
 
-.bubbleai{
-    background-color: white;
-    width: 100%;
-    height: 50%;
-    margin: 50px;
-    margin-right: 100px;
-    border-radius: 15px 15px 15px 15px;
-}
 
 /* .inputuser{
     background-color: white;
     width: 500px;
     height: 50px;
     border-radius: 15px 15px 15px 15px;} */
-
+.inputUser{
+    width: 100%;
+    height: 20%;
+}
 textarea {
-    width: 900px;
-    height: 50px;
-    margin-top: 550px;
-    margin-left: 40px;
-    margin-right: 20px;
+    width: 65%;
+    margin:0 auto;
     border-radius: 15px 15px 15px 15px;
     resize: none;
     font-size: 25px;
 }
 
-
+.chatInd{
+    overflow-y: scroll;
+    width: 100%;
+    height: 80%;
+}
+ .chatInd::-webkit-scrollbar{
+    background-color: rgb(75, 65, 65);
+    width: 12px;
+    border-radius: 10px;
+}
 
 /*Api view */
 .messageApi {

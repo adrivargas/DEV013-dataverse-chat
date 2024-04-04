@@ -9,32 +9,33 @@ export const chatIndividual = (movie) => {
 
     //Creo todas las constantes a usar//
     const view = document.createElement("div");
-    const mainPage = document.createElement("article");
+    const mainPage = document.createElement('div');
     const secondaryHeader = document.createElement("div")
     const onlineMovie = document.createElement("p");
     const contenedorDeBurbujas = document.createElement("div")
-    const burbujaChat = document.createElement("div") //donde el usuario escribe
-    const burbujaMovie = document.createElement("div")
     const inputmessage = document.createElement("textarea")
     const sendButton = document.createElement("button");
     const btnHome = document.createElement('button');
     const containerbubble = document.createElement('section')
+    const textInput = document.createElement('div');
 
     // Añado mis clases
     mainPage.className = "mainchat"
     secondaryHeader.className = "secondaryheader"
     onlineMovie.className = "online"
-    burbujaChat.className = "burbujachat"
-    burbujaMovie.className = "burbujamovie"
     sendButton.className = "sendbutton"
     inputmessage.id = "movieMsg";
     btnHome.className = "btnHome";
+    textInput.className = "inputUser"
+    contenedorDeBurbujas.className = "chatInd";
  
     // Añado mis append y appendChild
     secondaryHeader.appendChild(onlineMovie);
+    contenedorDeBurbujas.appendChild(containerbubble);
+    textInput.append(inputmessage,sendButton)
     mainPage.appendChild(secondaryHeader);
-    mainPage.appendChild(containerbubble);
-    mainPage.append(inputmessage, sendButton);
+    mainPage.appendChild(contenedorDeBurbujas);
+    mainPage.appendChild(textInput);
     view.append(header(), btnHome,mainPage);
     //Mis textContent
     onlineMovie.textContent = "Online"
@@ -45,14 +46,12 @@ export const chatIndividual = (movie) => {
         const userMessage = inputmessage.value; // Obtener el mensaje del usuario
         const resultChatUser = addChatBubble("user", userMessage); // Agregar la burbuja del usuario al contenedor de burbujas
         containerbubble.appendChild(resultChatUser)
-        scrollChatToBottom(containerbubble)
         communicateWithOpenAI(movie, userMessage)
             .then(response => {
                 // Procesar la respuesta de la IA
                 const aiResponse = response.choices[0].message.content; // Supongamos que la respuesta de la IA está en el campo 'data'
                 const resultChatIA = addChatBubble("ai", aiResponse); // Agregar la burbuja de chat con la respuesta de la IA
                 containerbubble.appendChild(resultChatIA)
-                scrollChatToBottom(containerbubble)
             })
             .catch(error => {
                 console.error("Error al comunicarse con OpenAI:", error);
@@ -70,19 +69,18 @@ export const chatIndividual = (movie) => {
         const bubble = document.createElement("div");
         bubble.className = `bubble ${role}`;
         bubble.textContent = message;
-        bubble.style = `background-color: white;
+        bubble.style = `background-color:  rgb(75, 65, 65);
         width: 100%;
         height: 50%;
         margin-top: 50px;
         border-radius: 15px 15px 15px 15px;
         font-family: sans-serif;
-        font-size: 22px;`
+        font-size: 22px;
+        color: white;`
         return bubble;
     }
 
-    function scrollChatToBottom(container) {
-        container.scrollTop = container.scrollHeight;
-    }
+    
     return view;
     // Por revisar
 };
