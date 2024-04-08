@@ -1,6 +1,6 @@
 export const ordenarNombresAZ = (data) => {
 
-   const dataOrdenada = data.slice().sort((a,b)=>{
+  const dataOrdenada = data.slice().sort((a,b)=>{
     const nombreA = a.name.toUpperCase();
     const nombreB = b.name.toUpperCase();
 

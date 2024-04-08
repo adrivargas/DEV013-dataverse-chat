@@ -2,7 +2,7 @@
 import { getApiKey } from './apiKey.js';
 const receiveApi = getApiKey();
 export const communicateWithOpenAI = (movie, input) => {
-  console.log(movie.props.name);
+  //console.log(movie.props.name);
   
   //  //Aquí es donde debes implementar la petición con fetch o axios
   const response =  fetch('https://api.openai.com/v1/chat/completions', {

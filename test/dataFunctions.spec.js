@@ -1,7 +1,4 @@
-//import { example, anotherExample } from '../src/dataFunctions.js';
-
-import { data } from '../src/data/dataset.js';
-import { ordenarNombresAZ, ordenarNombresZA, generoMovies, premiosGanadosTotal, promedioPremiosGanados, calcularEstadisticasIngresosPorGenero } from '../src/lib/dataFunctions.js';
+import { ordenarNombresAZ, ordenarNombresZA, generoMovies, premiosGanadosTotal, promedioPremiosGanados, calcularEstadisticasIngresosPorGenero } from '..src/lib/datafunction.js'
 
 describe('ordenarNombresAZ', () => {
   it('debería ordenar correctamente un array de objetos por el campo "name" en orden alfabético ascendente', () => {

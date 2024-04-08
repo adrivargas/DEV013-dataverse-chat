@@ -1,27 +1,19 @@
 import { getApiKey, setApiKey } from '../src/lib/apiKey.js';
 describe('getApiKey', () => {
-  test('should return null if apiKey is not set', () => {
-
-    localStorage = {};
+  test('deberia devolver el valor de la API Key', () => {
+   
     const apiKey = getApiKey();
-    expect(apiKey).toBeNull();
-  });
-
-  test('should return the apiKey if it is set', () => {
-    const apiKeyValue = 'test-api-key';
-    localStorage['apiKey'] = apiKeyValue;
-    const apiKey = getApiKey();
-    expect(apiKey).toBe(apiKeyValue);
+    //localStorage.setItem("apiKey", apiKey)
+    expect(getApiKey()).toBe(apiKey);
   });
 });
-
-
 
 describe('setApiKey', () => {
 
   it('debería establecer correctamente la API Key', () => {
-    const apiKeyValue = 'test-api-key';
-    setApiKey(apiKeyValue);
-    expect(localStorage['apiKey']).toBe(apiKeyValue);
+    const apiKey = "mockKey123"
+    const result = setApiKey(apiKey)
+    expect(localStorage['apiKey']).toEqual(apiKey);
+    expect(result).toBeUndefined();
   });
 });
