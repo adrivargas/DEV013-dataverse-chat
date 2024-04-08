@@ -10,7 +10,7 @@ describe("communicateWithOpenAI", () => {
   });
 
   test("responde de forma correcta", async () => {
-    const respuesta = await communicateWithOpenAI({ props: { name: "someName" } }, "Hola");
+    const respuesta = await communicateWithOpenAI({ props: { name: "Titulo" } }, "Hola");
     
     expect(respuesta).toEqual(mockRespuesta);
   });
@@ -43,4 +43,15 @@ describe("communicateWithOpenAI", () => {
     });
   });
 
-});
+  test("error al comunicarse con la API", async()=> {
+    const mockRespuesta = { text: "Hola, como estas?" };
+    const respuesta = await communicateWithOpenAI({ props: { name: "Titulo" } }, "Hola");
+    expect(respuesta).toEqual(mockRespuesta);
+
+    if (!respuesta) {
+      return ("Error al comunicarse con la API")
+    }
+  });
+
+})
+
