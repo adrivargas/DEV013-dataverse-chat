@@ -8,7 +8,7 @@ export function MovieInfo(props) {
   const container = document.createElement('div');
   container.id = "containerMovie";
   const movieIn = document.createElement('div');
-  const icono = document.createElement('div');
+  //const icono = document.createElement('div');
   const btnHome = document.createElement('button');
   btnHome.className = "btnHome";
   btnHome.addEventListener('click', () => navigateTo("/home", {}));
@@ -26,7 +26,7 @@ export function MovieInfo(props) {
     const prueba = []
     prueba.push(selectedMovieInfo)
     console.log(prueba);
-    const longCard = renderData(prueba);
+    //const longCard = renderData(prueba);
     //container.appendChild(longCard);
     movieIn.innerHTML = renderData(prueba)
   } else {

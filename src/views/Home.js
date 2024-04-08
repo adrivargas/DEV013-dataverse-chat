@@ -7,8 +7,8 @@ import { Filters } from '../components/filters.js';
 import { navigateTo } from '../router.js';
 import { ordenarNombresAZ, ordenarNombresZA, generoMovies, calcularEstadisticasIngresosPorGenero, premiosGanadosTotal, promedioPremiosGanados } from '../lib/datafunction.js';
 
-export function Home({ id }) {
-  const foundView = data.find((item) => item.id === id);
+export function Home() {
+  //const foundView = data.find((item) => item.id === id);
   const viewEl = document.createElement('div');
   const movieData = document.createElement('div');
   const filterElement = document.createElement('div');
@@ -149,7 +149,7 @@ export function Home({ id }) {
     selectSort.selectedIndex = 0;
     //estadisticaPremios.selectedIndex = 0;
     movieData.innerHTML = renderData(data);
-   // movieData.appendChild(renderData(data))
+    // movieData.appendChild(renderData(data))
   });
 
   btnClose.addEventListener('click', () => {

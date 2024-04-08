@@ -1,32 +1,38 @@
-import { communicateWithOpenAI } from './ruta/de/tu/archivo.js';
+import { communicateWithOpenAI } from '../src/lib/openAIApi';
 
-// Mock de la función getApiKey para evitar llamadas reales a la API 
-jest.mock('./ruta/de/tu/apiKey.js', () => ({
-  getApiKey: jest.fn(() => 'mockedApiKey')
-}));
+describe("communicateWithOpenAI", () => {
 
-describe('communicateWithOpenAI', () => {
-  it('debería llamar a la API de OpenAI con los parámetros correctos', async () => {
-    // Definir los datos de prueba
-    const movie = { props: { name: 'Nombre de la película' } };
-    const input = 'Mensaje de prueba';
+  const mockRespuesta = { text: "Hola, como estas?" };
 
-    // Llama a la función 
+  // eslint-disable-next-line no-undef
+  global.fetch = jest.fn().mockResolvedValue({
+    json: () => Promise.resolve(mockRespuesta),
+  });
+
+  test("responde de forma correcta", async () => {
+    const respuesta = await communicateWithOpenAI({ props: { name: "someName" } }, "Hola");
+    
+    expect(respuesta).toEqual(mockRespuesta);
+  });
+
+  test("se comunica de forma correcta con la API", async () => {
+    const input = "Hola";
+    const movie = { name: "Titulo" };
+
     await communicateWithOpenAI(movie, input);
 
-    // Verificar si fetch fue llamado con los parámetros correctos
     expect(fetch).toHaveBeenCalledWith('https://api.openai.com/v1/chat/completions', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer mockedApiKey", // Usando el API key mockeado
-      },
+        Authorization: "Bearer mockedApiKey", 
+      }, 
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
         messages: [
           {
             role: "system",
-            content: `Tu eres: ${movie.props.name}, responde dando informacion sobre ti`,
+            content: `Tu eres: ${movie.name}, responde dando informacion sobre ti`,
           },
           {
             role: "user",

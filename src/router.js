@@ -14,9 +14,9 @@ export const setRoutes = (routes) => {
   }
 
   // Throw errors if routes doesn't define an /error route
-  if (!routes.hasOwnProperty('/error')) {
-    throw new Error('Routes must define an /error route');
-  }
+  // if (!routes.hasOwnProperty('/error')) {
+  //   throw new Error('Routes must define an /error route');
+  // }
 
   // assign ROUTES
   return ROUTES = routes;

@@ -1,7 +1,7 @@
 import { header } from '../components/header.js';
 import { footer } from '../components/footer.js';
 import { navigateTo } from '../router.js';
-export const Error = (props) => {
+export const Error = () => {
 
   const viewError = document.createElement("div");
   const errorBody = document.createElement("div");
