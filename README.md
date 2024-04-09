@@ -25,7 +25,7 @@ Parte de nuestro proyecto es cubrir los requerimientos que pide, entonces nuestr
   desde distintos tamaños de pantallas: móviles, tablets y desktops.
 
 <p align="center">
-<img src="./src/images/dataversechat (1).gif.gif">
+<img src="./src/images/dataversechat (1).gif">
 </p>
 
 
