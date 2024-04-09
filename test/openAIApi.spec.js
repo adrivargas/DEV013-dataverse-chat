@@ -32,7 +32,7 @@ describe("communicateWithOpenAI", () => {
         messages: [
           {
             role: "system",
-            content: `Tu eres: ${movie.name}, responde dando informacion sobre ti`,
+            content: `Tu eres: ${movie.props.JSONname}, responde dando informacion sobre ti`,
           },
           {
             role: "user",

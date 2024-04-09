@@ -1,4 +1,4 @@
-import { ordenarNombresAZ, ordenarNombresZA, generoMovies, premiosGanadosTotal, promedioPremiosGanados, calcularEstadisticasIngresosPorGenero } from '..src/lib/datafunction.js'
+import { ordenarNombresAZ,ordenarNombresZA,calcularEstadisticasIngresosPorGenero,premiosGanadosTotal,promedioPremiosGanados,generoMovies } from "../src/lib/datafunction.js";
 
 describe('ordenarNombresAZ', () => {
   it('debería ordenar correctamente un array de objetos por el campo "name" en orden alfabético ascendente', () => {
